@@ -1,0 +1,77 @@
+rb {color: #057cb5;font-size: 100%;margin-left: .5em}
+rt {color: #e0115f;font-size: 100%}
+.clear {clear: both}
+.middle {vertical-align: middle}
+.top {vertical-align: top}
+#footer {margin-top: 4em;padding-bottom: 2em;text-align: center;border-top: 1px solid #ccc;font-size: .75em}
+#gdpr {position: fixed;background-color: rgba(0, 0, 0, 0.85);color: #FFF;text-align: center;left: 0;bottom: 0;width: 100%;font-size: .75em}
+#gdpr-btn {margin: 0 0 0 1em;padding: 0 1em;font-size: 1em;border: 1px solid #ccc;border-radius: 4px;-webkit-box-shadow: unset 0 1px 1px rgba(0, 0, 0, 0.075);box-shadow: unset 0 1px 1px rgba(0, 0, 0, 0.075)}
+ul.menu {list-style: none;padding-top: 1em}
+li.menuitem {display: inline;padding: 0;margin: 0 0 0 1em}
+li.activemenuitem a {border-bottom: 1px solid #3C0}
+#action {text-align: left}
+#action button {padding: 0 5px;vertical-align: middle;line-height: 18px}
+#shrink, #enlarge {width: 24px}
+a.soft_button {border: 1px solid lightblue;margin-left: 3px;padding: 0 2px;white-space: nowrap}
+.share-this .share {margin-right: 1em}
+input[type=number], input[type=text], textarea {font-family: Verdana, Helvetica, Arial, Sans-Serif;color: #464646;padding: 5px 8px;vertical-align: middle;border: 1px solid #ccc;border-radius: 4px;-webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);-webkit-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s}
+.nowrap {white-space: nowrap}
+#branah-keyboard {line-height: 20px;font-size: 1em}
+#branah-keyboard button {float: left;display: block;margin: 1px;height: 3em;text-align: center;color: gray}
+#branah-keyboard .branah-label-natural {color: #e0115f}
+#branah-keyboard .branah-label-shift {color: #057cb5}
+#branah-keyboard .branah-label-natural, #branah-keyboard .branah-label-shift {margin-top: -5px;line-height: 20px;text-align: center;cursor: default}
+#branah-keyboard .branah-label-reference {color: gray;font-size: .9em;line-height: 12px;text-align: left;cursor: default}
+#branah-k29 .branah-label-reference, #branah-k32 .branah-label-reference {color: #000}
+#branah-keyboard .branah-recessed span {color: #3C0}
+#branah-keyboard .branah-recessed-hover span {color: #ffd800}
+#branah-keyboard .branah-clear {clear: both}
+@media only screen and (max-width: 640px) {
+    #page {margin: 0 2px}
+    #header {margin-bottom: 1em}
+    #logo {display: inline-block;width: 100%;height: 46px;line-height: 46px;background-repeat: repeat-x;background-image: url(/images/branahmobile.jpg)}
+    a.soft_button {padding: 0 2px 0 0;margin-left: 0}
+    ul.list {list-style: none}
+    ul.list li {text-align: center;line-height: 2em;margin: 1em}
+    textarea {width: 85%}
+    #share {width: 100%;margin: 2em auto 1em auto;text-align: center}
+    #action {line-height: 2.25em}
+    #archived {font-size: .85em;margin: .5em 0 1em 0}
+    #branah-keyboard button {width: 88px}
+    #branah-keyboard .branah-key {width: 43px}
+    .gsc-search-box, .gsc-control-cse {display: none}
+}
+@media only screen and (min-width: 641px) and (max-width: 840px) {
+    #page {width: 630px;margin: 0 auto}
+    #header {margin-bottom: 1em}
+    #logo {display: inline-block;width: 630px;height: 108px;line-height: 108px;background-image: url(/images/branahtab.jpg)}
+    ul.list {list-style: none;display: inline-block;width: 150px}
+    ul.list li {line-height: 2em;margin: 0}
+    #editor {width: 600px}
+    #keyboard {width: 630px}
+    #selectAll, #saveAsTextFile, #postToFacebook, #shrink, #enlarge {margin-right: 2px;padding: 0 5px;vertical-align: middle;line-height: 18px}
+}
+@media only screen and (min-width: 841px) {
+    #page {width: 840px;margin: 0 auto}
+    #header {margin-bottom: 1em}
+    #logo {display: inline-block;width: 840px;height: 144px;line-height: 144px;background-image: url(/images/branah.jpg)}
+    div.side_content {position: absolute;top: 0;left: 0;width: 160px;_margin-left: -210px}
+    div.main_content {position: relative;padding-left: 210px}
+    ul.list {list-style: none;display: inline-block;width: 160px}
+    #editor {width: 607px;height: 96px}
+}
+@media only screen and (min-width: 641px) {
+    #branah-keyboard {width: 630px}
+    #branah-keyboard button {line-height: 2.75em;white-space: nowrap;border: solid 1px;outline: none;font-size: 13px;}
+    #branah-keyboard .branah-key {width: 40px}
+    #branah-backspace {width: 78px}
+    #branah-tab {width: 62px}
+    #branah-k25 {width: 56px}
+    #branah-caps-lock {width: 76px}
+    #branah-enter {width: 84px}
+    #branah-left-shift {width: 46px}
+    #branah-right-shift {width: 114px}
+    #branah-space {width: 246px;text-align: center}
+    #branah-right-ctrl, #branah-right-alt, #branah-escape {width: 62px}
+    #branah-left-ctrl, #branah-left-alt, #branah {width: 60px}
+}

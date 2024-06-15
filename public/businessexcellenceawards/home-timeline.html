@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="zxx">
+<head>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+*, html,body{
+  padding:0px;
+  margin:0px;
+  box-sizing:border-box;
+  font-family:'Poppins', sans-serif;
+  perspective:800px;
+}
+body{
+  background-color:transparent;
+  width:100%;
+  min-height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+.timeline{
+  width:360px;
+  background-color:transparent;
+  color:#fff;
+  padding:27px 18px;
+  box-shadow:0px 0px 10px rgba(0,0,0,.5);
+}
+.timeline ul{
+  list-style-type:none;
+  border-left:3px solid #90f0f0;
+  padding:10px 5px;
+}
+.timeline ul li{
+  padding:20px 20px;
+  position:relative;
+  cursor:pointer;
+  transition:.5s;
+}
+.timeline ul li span{
+  display:inline-block;
+  background-color:#1685b8;
+  border-radius:25px;
+  padding:2px 5px;
+  font-size:15px;
+  text-align:center;
+}
+.timeline ul li span.current{
+  display:inline-block;
+  background-color:#043163;
+  border-radius:9px;
+  animation: blinkingbkg 1s infinite;
+}
+@keyframes blinkingbkg{
+		0%		{ background-color: #043163;}
+		50%		{ background-color: #1685b8;}
+		100%	{ background-color: #000000;}
+}
+.timeline ul li .content h3{
+  color:#34ace0;
+  font-size:16px;
+  padding-top:5px;
+}
+.timeline ul li .content p{
+  padding:5px 0px 15px 0px;
+  font-size:13px;
+  font-style:italic;
+}
+.timeline ul li .content p a{
+  padding:5px 0px 15px 0px;
+  font-size:14px;
+  font-style:italic;
+  color:#ff0;
+  font-weight:bolder;
+}
+.timeline ul li:before{
+  position:absolute;
+  content:'';
+  width:12px;
+  height:12px;
+  background-color:#34ace0;
+  border-radius:50%;
+  left:-12px;
+  top:28px;
+  transition:.5s;
+}
+.timeline ul li.done:before{
+  position:absolute;
+  content:'';
+  width:12px;
+  height:12px;
+  background-color:#0F0;
+  border-radius:50%;
+  left:-12px;
+  top:28px;
+  transition:.5s;
+}
+.timeline ul li.now:before{
+  position:absolute;
+  content:'';
+  width:12px;
+  height:12px;
+  background-color:#FF0;
+  border-radius:50%;
+  left:-12px;
+  top:28px;
+  transition:.5s;
+}
+.timeline ul li:hover{
+  background-color:#043163;
+  border-top-right-radius: 45px 18px;
+}
+.timeline ul li:hover:before{
+  background-color:#0F0;
+  box-shadow:0px 0px 10px 2px #0F0;
+}
+@media (max-width:300px){
+  .timeline{
+    width:100%;
+    padding:30px 5px 30px 10px;
+  }
+  .timeline ul li .content h3{
+    color:#34ace0;
+    font-size:15px;
+  }
+
+}
+</style>
+</head>
+<body>
+	<div class="timeline">
+	<ul>
+	  <li class="done">
+		<span>April 28, 2023</span>
+		<div class="content">
+		  <h3><a style="color:#34ace0;" onClick="parent.switchtomain();">Announcement & Website Launch</a></h3>
+		  <p>
+			By <b>Dr. T G Nagendra Prasad</b><br>Consul General of India - SFO<br>at his office, 540 Arguello Blvd
+		  </p>
+		</div>
+	  </li>
+	  <li class="done">
+		<span>May 1, 2023</span>
+		<div class="content">
+		  <h3>Nominations Open</h3>
+		</div>
+	  </li>
+	  <li class="done">
+		<span>June 10, 2023</span>
+		<div class="content">
+		  <h3>Last Date for submitting Nominations</h3>
+		</div>
+	  </li>
+	  <li class="done">
+		<span>JUNE 24, 2023</span>
+		<div class="content">
+		  <h3>The BEA'23 Evening</h3>
+		  <p>
+			4:30PM - 6PM: Networking & Happy Hours<br>
+			6PM - 8:30PM: Awards Ceremony<br>
+			Dinner Follows...<br><br><a href='bea23.php' target="_parent"></a>
+		  </p>
+		</div>
+	  </li>
+	</ul>
+	</div>
+</body>
+</html>
