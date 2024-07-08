@@ -1,6 +1,6 @@
 <section class="pl-3 sidebar-news space-y-3 pb-3">
     <div class="sidebar-news-wrapper">
-        <div class="main-heading">Highlight News</div>
+        <div class="main-heading">Highlight Nes</div>
         <div class="sidebar-news-body space-y-2">
             @forelse($highlights as $highlight)
                 <div class="sidebar-news-item bg-gray-200 shadow-md telugu2 text-sm font-bold text-gray-500 overflow-hidden overflow-ellipsis">

@@ -18,8 +18,10 @@ class HomeController extends Controller
 {
     public function home($language = null)
     {
+        $news_categories =[];
         $categories = ['politics' => 'Political', 'cinemas' => 'Cinema', 'community' => 'Community'];
         [$tabs, $news] = $this->homeTabData($categories, $language);
+
         $welcomeNote = WelcomeNote::first();
         $sidebarNews = $this->sidebarNews($language);
         $associations = Association::all();
@@ -29,11 +31,28 @@ class HomeController extends Controller
         $ads = Advertisement::whereNotIn('position', ['logo-top-left', 'logo-top-right'])->get();
         $ads = $ads->groupBy('position')->all();
         $videos = Video::take(6)->get();
+        $filter_lang = (!empty($this->language) && $this->language === 'eng') ? "YES" : "NO";
+        $highlights = News::highlighted()->where('has_english', $filter_lang)->take(10)->get();
+         $communityCategory = Category::where('slug', 'community')->first();
+         $news_details = News::where(function ($query) use ($communityCategory) {
+            $query->whereJsonContains('category_json', $communityCategory->id)
+                ->orwhereJsonContains('category_json', $communityCategory->children->pluck('id'));
+        })->where('has_english', $filter_lang)->take(7)->get();;
+       $uri_news= News::whereJsonContains('category_json', $communityCategory->children->pluck('id'))->where('has_english', 'YES')->take(7)->get();
+//print_r($uri_news);die;
+    // Output the formatted SQL
+   // echo "SQL Query: $formattedSql";
+       // print_r($news_details);die;
         return view("home",
             compact('categories', 'tabs', 'news', 'sidebarNews', 'associations', 'epapers', 'cinema_gallery',
-                'community_gallery', 'ads', 'videos', 'welcomeNote', 'language'));
+                'community_gallery', 'ads', 'videos', 'welcomeNote', 'language','highlights','news_details','uri_news'));
     }
+    public function fetchNewsByCategory($categoryId)
+{
+    $newsItems = News::whereJsonContains('category_json', $categoryId)->take(27)->get();
 
+    return response()->json($newsItems);
+}
     public function article(News $news)
     {
         return view("article", ['news' => $news]);
@@ -149,11 +168,32 @@ class HomeController extends Controller
         $ads = $ads->groupBy('position')->all();
         $videos = Video::take(6)->get();
         $header_partial = "header1";
+        $politics = Political::take(5)->get();
+        $cinemas = Cinema::take(5)->get();
+        $community = Community::take(5)->get();
+
+        return view("home",
+            compact('categories','tabs','news',  'sidebarNews', 'associations', 'news_folders', 'epapers',
+                'community_gallery', 'ads', 'videos', 'welcomeNote', 'header_partial'));
+    }
+    public function home3()
+    {
+        $categories = ['politics' => 'Political', 'cinemas' => 'Cinema', 'community' => 'Community'];
+        [$tabs, $news] = $this->homeTabData($categories);
+        $welcomeNote = WelcomeNote::first();
+        $sidebarNews = $this->sidebarNews();
+        $associations = Association::all();
+        $news_folders = NewsFolder::take(5)->get();
+        $epapers = Epaper::take(5)->get();
+        $community_gallery = Gallery::where('category', 'america')->take(5)->get();
+        $ads = Advertisement::whereNotIn('position', ['logo-top-left', 'logo-top-right'])->get();
+        $ads = $ads->groupBy('position')->all();
+        $videos = Video::take(6)->get();
+        $header_partial = "header1";
         return view("home",
             compact('categories', 'tabs', 'news', 'sidebarNews', 'associations', 'news_folders', 'epapers',
                 'community_gallery', 'ads', 'videos', 'welcomeNote', 'header_partial'));
     }
-
     public function home2()
     {
         $categories = ['politics' => 'Political', 'cinemas' => 'Cinema', 'community' => 'Community'];

@@ -1,5 +1,5 @@
 <footer class="pt-4 bg-blue-600 mt-4">
-    <div class="lg:w-9/12 mx-auto px-4 lg:px-0 text-white space-y-8 leading-loose text-sm">
+    <div class="lg:w-9/12 mx-auto px-4 lg:px-8 text-white space-y-8 leading-loose text-sm">
         <div class="flex items-center">
             <div class="flex-item space-y-2 hidden lg:block lg:w-4/12" id="footerForm">
                 <div class="w-11/12">
@@ -84,15 +84,48 @@
         All rights reserved | Telugutimes
     </p>
 </footer>
+
+{{-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous"> --}}
+
+            
+            
+            <!-- Footer Widget End -->
+            
+           
+            
+            
+            
+           
+            
+        </div>
+    </div>
+</div>
+        </div>
+    </div>
+</div><!-- Footer Top Section End -->
+
+<!-- Footer Bottom Section Start -->
+<div class="section">
+    <div class="container footer-bottom-section bg-dark">
+        <div class="row">
+            
+            <!-- Copyright Start -->
+            <div class="copyright col12">
+               <p class="text-left text-white bg-blue-700">
+    Copyright ©
+    <script> document.write(new Date().getFullYear()); </script>
+    All rights reserved | Telugutimes
+</p>
+
+{{-- <p  class="text-right text-white bg-blue-700">Powered By: <a href="https://www.bitra.com/" target="_blank" title="Website Designed By BitraNet Pvt Ltd.,">BITRA</a> &amp; <a href="https://www.bitragroup.com/" target="_blank" title="Website Developed By BitraTech (OPC) Pvt. Ltd.,">BITRA GROUP</a></p> --}}
+            </div><!-- Copyright End -->
+            
+        </div>
+    </div>
+</div>
 <button onclick="topFunction()" id="scrollToTop" class="hidden bottom-4 fixed w-12 h-12 right-4 btn primary" title="Go to top">
     <svg class="w-6 h-6 animate-bounce m-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7l4-4m0 0l4 4m-4-4v18"></path>
     </svg>
 </button>
-{{-- <script src="{{ asset("js/jquery-3.6.0.min.js")}}"></script> --}}
-{{-- <script src="{{ asset("js/jquery-migrate-3.3.2.min.js")}}"></script> --}}
 <script src="{{ asset("js/back-top.js") }}"></script>
-{{-- <script src="{{ asset("js/main.js") }}"></script> --}}
-{{-- <script src="{{ asset("js/plugins.js") }}"></script> --}}
-
-   

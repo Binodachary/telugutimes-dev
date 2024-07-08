@@ -2,8 +2,8 @@
 
 @php
     $classes = ($active ?? false)
-                ? 'bg-red-500 inline-flex items-center text-xs xl:text-sm p-2 pt-3 text-white'
-                : 'inline-flex items-center text-xs xl:text-sm p-2 pt-3 text-white';
+                ? 'bg-red-500 inline-flex items-center text-xs xl:text-sm p-2 pt-3 text-white f-13 mr-3'
+                : 'inline-flex items-center text-xs xl:text-sm p-2 pt-3 text-white f-13 mr-3';
 @endphp
 
 @php
@@ -20,7 +20,6 @@
             break;
     }
 @endphp
-
 @if($hasDropdown)
     <div class='dropdown-menu relative items-center' @mouseenter="menuOpen ='{{ $dropdownText }}'" @mouseleave="menuOpen = false" v-click-outside="closeDropdown">
         <span class="flex items-center">

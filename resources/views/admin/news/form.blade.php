@@ -194,24 +194,29 @@
                         </x-reuse.label>
                         @error('description')
                         <x-reuse.error :error="$message"/> @enderror
-                        <textarea class="tinymce" title="Description" id="description"
-                                  name="description">{!! old('description',$news->description) ?? "" !!}</textarea>
+                        {{-- <textarea class="tinymce" title="Description" id="description"
+                                  name="description">{!! old('description',$news->description) ?? "" !!}</textarea> --}}
+                                  <textarea title="Description" id="description" name="description">{!! old('description', $news->description ?? "") !!}</textarea>
                     </div>
                     <div :class="description>1 ? 'block' : 'hidden'">
-                        <textarea class="tinymce" title="Description" id="description2"
-                                  name="description2">{!! old('description2',$news->description2) ?? "" !!}</textarea>
+                        {{-- <textarea class="tinymce" title="Description" id="description2"
+                                  name="description2">{!! old('description2',$news->description2) ?? "" !!}</textarea> --}}
+                                  <textarea title="Description" id="description2" name="description2">{!! old('description2', $news->description2 ?? "") !!}</textarea>
                     </div>
                     <div :class="description>2 ? 'block' : 'hidden'">
-                        <textarea class="tinymce" title="Description" id="description3"
-                                  name="description3">{!! old('description3',$news->description3) ?? "" !!}</textarea>
+                        {{-- <textarea class="tinymce" title="Description" id="description3"
+                                  name="description3">{!! old('description3',$news->description3) ?? "" !!}</textarea> --}}
+                                  <textarea title="Description" id="description3" name="description3">{!! old('description3', $news->description3 ?? "") !!}</textarea>
                     </div>
                     <div :class="description>3 ? 'block' : 'hidden'">
-                        <textarea class="tinymce" title="Description" id="description4"
-                                  name="description4">{!! old('description4',$news->description4) ?? "" !!}</textarea>
+                        {{-- <textarea class="tinymce" title="Description" id="description4"
+                                  name="description4">{!! old('description4',$news->description4) ?? "" !!}</textarea> --}}
+                                  <textarea title="Description" id="description4" name="description4">{!! old('description4', $news->description4 ?? "") !!}</textarea>
                     </div>
                     <div :class="description>4 ? 'block' : 'hidden'">
-                        <textarea class="tinymce" title="Description" id="description5"
-                                  name="description5">{!! old('description5',$news->description5) ?? "" !!}</textarea>
+                        {{-- <textarea class="tinymce" title="Description" id="description5"
+                                  name="description5">{!! old('description5',$news->description5) ?? "" !!}</textarea> --}}
+                                  <textarea title="Description" id="description5" name="description5">{!! old('description5', $news->description5 ?? "") !!}</textarea>
                     </div>
                 </div>
                 <div class="inline-flex space-x-3">
@@ -224,7 +229,7 @@
             </form>
         </x-reuse.card>
     </div>
-    <x-slot name="styles">
+    {{-- <x-slot name="styles">
         <link rel="stylesheet" href="{{ asset('css/flatpickr.min.css') }}">
         <link rel="stylesheet" href="{{ asset('css/tom-select.min.css') }}">
         <!--        <link rel="stylesheet" href="{{ asset('css/telugu-keyboard.css') }}">-->
@@ -234,7 +239,7 @@
                 referrerpolicy="origin"></script>
         <script src="{{ asset('js/flatpickr.min.js') }}"></script>
         <script src="{{ asset('js/tom-select.min.js') }}"></script>
-        {{--        <script src="{{ asset('js/telugu-keyboard.js') }}"></script>--}}
+        {{--        <script src="{{ asset('js/telugu-keyboard.js') }}"></script>--}
         <script>
             let news_folder = new TomSelect("#news_folder_id", {
                 allowEmptyOption: true,
@@ -278,5 +283,59 @@
                 height: 300
             });
         </script>
+    </x-slot> --}}
+    <x-slot name="styles">
+        <link rel="stylesheet" href="{{ asset('css/flatpickr.min.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/tom-select.min.css') }}">
+        <!-- <link rel="stylesheet" href="{{ asset('css/telugu-keyboard.css') }}"> -->
     </x-slot>
+    <x-slot name="scripts">
+        <script src="https://cdn.ckeditor.com/4.21.0/standard/ckeditor.js"></script>
+        <script src="{{ asset('js/flatpickr.min.js') }}"></script>
+        <script src="{{ asset('js/tom-select.min.js') }}"></script>
+        {{-- <script src="{{ asset('js/telugu-keyboard.js') }}"></script> --}}
+        <script>
+            let news_folder = new TomSelect("#news_folder_id", {
+                allowEmptyOption: true,
+                maxItems: null,
+                valueField: 'id',
+                labelField: 'name',
+                searchField: 'name',
+                options: @json($news_folders, JSON_UNESCAPED_UNICODE),
+                @if(!empty($news->id))
+                onInitialize: function (values) {
+                    this.setValue({{ $news->news_folder_id }})
+                },
+                @endif
+                create: false
+            });
+            new TomSelect("#gallery_id", {
+                allowEmptyOption: true,
+                maxItems: null,
+                valueField: 'id',
+                labelField: 'name',
+                searchField: 'name',
+                options: @json($galleries, JSON_UNESCAPED_UNICODE),
+                @if(!empty($news->id))
+                onInitialize: function (values) {
+                    this.setValue({{ $news->gallery_id }})
+                },
+                @endif
+                create: false
+            });
+            flatpickr('#schedule_to', {
+                minDate: 'today',
+                enableTime: true,
+                altInput: true,
+                altFormat: 'M J,Y h:i K'
+            });
+            // Initialize CKEditor for each textarea
+            document.querySelectorAll('textarea[id^="description"]').forEach(textarea => {
+                CKEDITOR.replace(textarea.id, {
+                    height: 300
+                });
+            });
+        </script>
+    </x-slot>
+    
 </x-admin-layout>
