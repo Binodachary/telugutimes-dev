@@ -26,6 +26,7 @@
                     <!-- Hero Post Slider Start -->
                     <div class="post-carousel-1 newshighlights">
                         <!-- Overlay Post Start -->
+                       
                         @foreach ($highlights as $highlight)
                             <div class="post post-large post-overlay hero-post">
                                 <div class="post-wrap">
@@ -42,6 +43,9 @@
                                 </div>
                             </div><!-- Overlay Post End -->
                         @endforeach
+                        
+                        
+                        <!-- Overlay Post End -->
                         <!-- Overlay Post End -->
                     </div>
 
@@ -93,7 +97,9 @@
                 <div class="w-full md:w-11/12 lg:w-full mt-3">
                     <div class="post-carousel-1 adspace">
                         <!-- Overlay Post Start -->
+                        {{-- @php print_r($ads);  @endphp --}}
                         @foreach($ads['home-right-slider'] as $ad)
+                        
                         <div class="post post-large post-overlay hero-post">
                             <div class="post-wrap">
 

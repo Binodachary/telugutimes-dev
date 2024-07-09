@@ -7,8 +7,8 @@
     <link rel="stylesheet" href="{{ asset('css/plugins.css') }}">
     <link rel="stylesheet" href="{{ asset('css/ycp.css') }}">
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
-    {{-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"> --}}
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
+    {{-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"> --}}
     {{ $styles ?? "" }}
     @livewireStyles
     <style>
@@ -63,26 +63,26 @@
 @include("footer")
 <script src="{{ asset('js/app.js') }}" defer></script>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="{{ asset('js/plugins.js')}}"></script>
+{{-- <script src="{{ asset('js/plugins.js')}}"></script> --}}
 <!-- ycp JS -->
 <script src="{{ asset('js/ycp.js')}}"></script>
 <!-- Main JS -->
 <script src="{{ asset('js/main.js')}}"></script>
     <!-- Slick Carousel JS -->
-    {{-- <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.10.6/dist/alpine.js" defer></script> --}}
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+   
 
     <script>
         $(document).ready(function(){
-            // $('.post-carousel-1').slick({
-            //     autoplay: true,
-            //     autoplaySpeed: 2000, // 2 seconds
-            //     infinite: true,
-            //     slidesToShow: 1,
-            //     slidesToScroll: 1,
-            //     prevArrow: '<button type="button" class="slick-prev"><i class="fa fa-angle-left"></i></button>',
-            //     nextArrow: '<button type="button" class="slick-next"><i class="fa fa-angle-right"></i></button>',
-            // });
+            $('.post-carousel-1').slick({
+                autoplay: true,
+                autoplaySpeed: 2000, // 2 seconds
+                infinite: true,
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                prevArrow: '<button type="button" class="slick-prev"><i class="fa fa-angle-left"></i></button>',
+                nextArrow: '<button type="button" class="slick-next"><i class="fa fa-angle-right"></i></button>',
+            });
         });
         
         document.addEventListener("DOMContentLoaded", function() {
