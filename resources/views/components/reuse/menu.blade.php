@@ -44,7 +44,7 @@
         </div>
     </div>
     <!-- Responsive Navigation Menu -->
-    <div :class="{'translate-x-0': open, '-translate-x-full': ! open}" v-cloak class="bg-blue-500 divide-black divide-solid divide-y fixed inset-y-0 left-0 lg:hidden transform-gpu z-10 transition w-full duration-300 ease-linear" style="margin-top: 61px;">
+    <div :class="{'translate-x-0': open, '-translate-x-full': ! open}" v-cloak class="bg-blue-500 divide-black divide-solid divide-y fixed inset-y-0 left-0 lg:hidden transform-gpu z-10 transition w-full duration-300 ease-linear" style="margin-top: 134px;">
         <x-reuse.menu-item href="/" style="padding-top: 8px!important;" :active="request()->routeIs('home')" class="w-full">
             <svg xmlns="http://www.w3.org/2000/svg" class="fill-current text-white h-6 w-6" viewBox="0 0 20 20" fill="currentColor">
                 <path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"/>
