@@ -2,8 +2,8 @@
 
 @php
     $classes = ($active ?? false)
-                ? 'bg-red-500 inline-flex items-center text-xs xl:text-sm p-2 pt-3 text-white f-13 mr-3'
-                : 'inline-flex items-center text-xs xl:text-sm p-2 pt-3 text-white f-13 mr-3';
+                ? 'inline-flex items-center text-xs xl:text-sm p-2 pt-3 text-white f-13'
+                : 'inline-flex items-center text-xs xl:text-sm p-2 pt-3 text-white f-13';
 @endphp
 
 @php
