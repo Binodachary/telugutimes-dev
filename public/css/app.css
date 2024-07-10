@@ -3277,7 +3277,8 @@ html {
     line-height: 14px;
     text-transform: capitalize;
     padding-left: 15px;
-    border-left: 4px solid #224893;
+    border-left: 4px solid #224893 !important;
+    margin-bottom: 5px;
  }
  .skyad2{
     width: 160px;
