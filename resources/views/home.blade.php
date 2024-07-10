@@ -62,7 +62,7 @@
                             <!-- Tab List -->
                             <div class="sidebar-tab-list education-sidebar-tab-list nav">
                                 <a class="tab-link active" data-tab-target="#community">Community News</a>
-                                <a class="tab-link" data-tab-target="#usanri">USA Upcoming Events</a>
+                                <a class="tab-link" data-tab-target="#usanri">Associations</a>
                             </div>
                         </div><!-- Sidebar Block Head End -->
 
@@ -76,12 +76,32 @@
                                         @endforeach
                                     </ul>
                                 </div>
-                                <div class="tab-pane" id="usanri">
-                                    <ul class="post">
+                                <div class="tab-pane assoications" id="usanri">
+                                    {{-- <ul class="">
                                         @foreach ($uri_news as $usa_news)
                                         <li><a href="#">{{shortText($usa_news->title,9)}}</a></li>
                                         @endforeach
-                                    </ul>
+                                    </ul> --}}
+                                    @if($associations->count() > 0)
+                                    <x-reuse.slider options="{type:'loop',perPage: 1,autoplay: true,pauseOnHover: true,interval: 6000,pagination: true,arrows:false}">
+                                        @foreach($associations->chunk(10) as $newsItems)
+                                            <x-reuse.carousel-item class="max-w-full">
+                                                <div class="association-body gap-1 grid grid-cols-4 justify-items-stretch lg:grid-cols-4 xl:grid-cols-5">
+                                                    @foreach($newsItems as $association)
+                                                        <div class="association">
+                                                            <a href="{{ route('association',$association->name) }}">
+                                                                <img class="w-full" src="{{ asset("storage/gallery/association-logos/{$association->name}/{$association->logo}") }}" alt="{{ $association->name }}">
+                                                            </a>
+                                                        </div>
+                                                    @endforeach
+                                                </div>
+                                            </x-reuse.carousel-item>
+                                        @endforeach
+                                    </x-reuse.slider>
+                                @else
+                                    <h1 class="text-lg">No association has been added yet.</h1>
+                                @endif
+
                                 </div>
                             </div>
                         </div><!-- Sidebar Block Body End -->
