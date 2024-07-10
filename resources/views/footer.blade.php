@@ -11,7 +11,7 @@
                 <div class="w-full text-center">
                     <label for="epaperSubscribe" class="font-bold text-lg text-white">Subscribe to <span class="highlight-menu-item">E-Paper</span></label>
                     <form action="" class="flex lg:block" method="post" @submit.prevent="addSubscriber">
-                        <input type="email" style="padding: 4px;margin:0px 5px 3px 0px" required @keyup="validateEmail" v-model="email" :readonly="stopSubmit" id="epaperSubscribe" class="lg:w-full border-0 text-gray-700 flex-1 placeholder-grey-400" placeholder="Enter your email" />
+                        <input type="email" style="padding: 4px;margin:0px 5px 3px 0px" required @keyup="validateEmail" v-model="email" :readonly="stopSubmit" id="epaperSubscribe" class="lg:w-9/12 border-0 text-gray-700 flex-1 placeholder-grey-400" placeholder="Enter your email" />
                         <button type="submit" name="subscribe" class="btn danger mx-auto" style="padding:0px 10px;">submit</button>
                     </form>
                     <div :class="[(type == 'warning') ? 'text-red-500' : 'text-green-500']" v-if="subscriber_message != ''" v-text="subscriber_message" v-cloak></div>

@@ -4,9 +4,6 @@
         
         <div class="hidden lg:flex items-center lg:divide-x divide-solid divide-black">
             <x-reuse.menu-item href="/">
-                <!-- <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path>
-                </svg> -->
                 Home
             </x-reuse.menu-item>
             @foreach($items as $item)
@@ -44,7 +41,8 @@
         </div>
     </div>
     <!-- Responsive Navigation Menu -->
-    {{-- <div :class="{'translate-x-0': open, '-translate-x-full': ! open}" v-cloak class="bg-blue-500 divide-black divide-solid divide-y fixed inset-y-0 left-0 lg:hidden transform-gpu z-10 transition w-full duration-300 ease-linear" style="margin-top: 135px;">
+
+    <!-- <div :class="{'translate-x-0': open, '-translate-x-full': ! open}" v-cloak class="bg-blue-500 divide-black divide-solid divide-y fixed inset-y-0 left-0 lg:hidden transform-gpu z-10 transition w-full duration-300 ease-linear" style="margin-top: 115px;">
         <x-reuse.menu-item href="/" style="padding-top: 8px!important;" :active="request()->routeIs('home')" class="w-full">
             <svg xmlns="http://www.w3.org/2000/svg" class="fill-current text-white h-6 w-6" viewBox="0 0 20 20" fill="currentColor">
                 <path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"/>
@@ -62,13 +60,11 @@
                 @endif
             </x-reuse.menu-item>
         @endforeach
-    </div> --}}
+    </div> -->
 
-    <div :class="{'opacity-100': open, 'opacity-0': !open, 'pointer-events-auto': open, 'pointer-events-none': !open}" v-cloak class="bg-blue-500 divide-black divide-solid divide-y fixed inset-y-10 left-0 md:hidden transform-gpu z-10 transition w-full duration-300 ease-linear" style="position: absolute;">
+    <div :class="{'opacity-100': open, 'opacity-0': !open, 'pointer-events-auto': open, 'pointer-events-none': !open}" v-cloak class="divide-black divide-solid divide-y inset-y-10 left-0 md:hidden transform-gpu z-10 transition w-full duration-300 ease-linear" style="position: absolute;background-color: rgb(34, 72, 147);">
         <x-reuse.menu-item href="/" style="padding-top: 8px!important;" :active="request()->routeIs('home')" class="w-full">
-            <svg xmlns="http://www.w3.org/2000/svg" class="fill-current text-white h-6 w-6" viewBox="0 0 20 20" fill="currentColor">
-                <path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"/>
-            </svg>
+            Home
         </x-reuse.menu-item>
         @foreach($items as $item)
             <x-reuse.menu-item href="{{ url($item['url']) }}" :active="menuActiveHelper($item)" dropdownText="{{ $item['text'] }}" hasDropdown="{{ $item['dropdown'] }}" class="w-full justify-between">
