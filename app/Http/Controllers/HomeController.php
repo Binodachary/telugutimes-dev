@@ -37,15 +37,20 @@ class HomeController extends Controller
          $news_details = News::where(function ($query) use ($communityCategory) {
             $query->whereJsonContains('category_json', $communityCategory->id)
                 ->orwhereJsonContains('category_json', $communityCategory->children->pluck('id'));
-        })->where('has_english', $filter_lang)->take(7)->get();;
+        })->where('has_english', $filter_lang)->take(7)->get();
        $uri_news= News::whereJsonContains('category_json', $communityCategory->children->pluck('id'))->where('has_english', 'YES')->take(7)->get();
+       $politicsCategory = Category::where('slug', 'politics')->first();
+         $poli_news_details = News::where(function ($que) use ($politicsCategory) {
+            $que->whereJsonContains('category_json', $politicsCategory->id)
+                ->orwhereJsonContains('category_json', $politicsCategory->children->pluck('id'));
+        })->where('has_english', $filter_lang)->take(8)->get();
 //print_r($uri_news);die;
     // Output the formatted SQL
    // echo "SQL Query: $formattedSql";
        // print_r($news_details);die;
         return view("home",
             compact('categories', 'tabs', 'news', 'sidebarNews', 'associations', 'epapers', 'cinema_gallery',
-                'community_gallery', 'ads', 'videos', 'welcomeNote', 'language','highlights','news_details','uri_news'));
+                'community_gallery', 'ads', 'videos', 'welcomeNote', 'language','highlights','news_details','uri_news','poli_news_details'));
     }
     public function fetchNewsByCategory($categoryId)
 {

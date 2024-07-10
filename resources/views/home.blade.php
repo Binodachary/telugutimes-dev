@@ -136,6 +136,46 @@
                         
                     </div> 
                 </div>
+                <div class="w-full md:w-11/12 lg:w-full mt-3">
+
+                    <!-- Political news -->
+
+                    <div class="sidebar-block-wrapper">
+
+                        <!-- Sidebar Block Head Start -->
+                        <div class="head feature-head bluebg">
+
+                            <!-- Title -->
+                            <h4 class="title telugu">రాజకీయం | Political News</h4>
+
+                        </div><!-- Sidebar Block Head End -->
+
+                        <!-- Sidebar Block Body Start -->
+                        <div class="body">
+
+                            <ul class="post telugu">
+                                @foreach ($poli_news_details as $poli_news_data)
+                               
+                                <li><a href="#">{{shortText($poli_news_data->title,10)}}</a></li>
+                                @endforeach
+                                {{-- <li><a href="#!">లోకేష్ ఫోన్ ట్యాప్! ఈసీకి టీడీపీ కంప్లైంట్</a></li>
+                                <li><a href="#!">ధాన్యం కొనుగోలు, నీటి సరఫరా అంశాలపై స్పందించిన రేవంత్
+                                        రెడ్డి</a></li>
+                                <li><a href="#!">షర్మిలపై విజయ్ సాయి రెడ్డి సంచలన వ్యాఖ్యలు</a></li>
+                                <li><a href="#!">ప్రచార బరిలో బాలయ్య</a></li>
+                                <li><a href="#!">గుంటూరు లో వైసీపీ కి ఊహించని ఎదురుదెబ్బ..</a></li>
+                                <li><a href="#!">ఆ పార్టీ ఒక్క సీటు గెలిస్తే.. తాను దేనికైనా సిద్ధమే : మంత్రి
+                                        కోమటిరెడ్డి</a></li>
+                                <li><a href="#!">షర్మిలపై విజయ్ సాయి రెడ్డి సంచలన వ్యాఖ్యలు</a></li> --}}
+                            </ul>
+
+                        </div><!-- Sidebar Block Body End -->
+
+                        <!-- Read More Button -->
+                        <a href="#" class="read-more">Read more...</a>
+                    </div>
+                    <!-- Political news ends-->
+                </div>
 
      
 </x-main-layout>
