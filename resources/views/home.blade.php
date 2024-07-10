@@ -18,7 +18,7 @@
     @endif
    
                 <!-- News Headlines Section -->
-                <div class="w-full md:w-11/12 lg:w-full mt-3">
+                <div class="w-full md:w-11/12 lg:w-full h-full mt-3">
                     <div class="headlines">
                         <h4 class="telugu">ముఖ్యాంశాలు | News Headlines</h4>
                     </div>
@@ -55,7 +55,7 @@
                         <p>"medium rectangle 300x160"</p>
                     </div>
                 </div>
-                <div class="w-full md:w-11/12 lg:w-full mt-3">
+                <div class="w-full md:w-11/12 lg:w-full h-full mt-3">
                     <div class="sidebar-block-wrapper">
                         <!-- Sidebar Block Head Start -->
                         <div class="head education-head">
@@ -114,7 +114,7 @@
                     </div>
                 </div>
                 <!-- NRI News Section -->
-                <div class="w-full md:w-11/12 lg:w-full mt-3">
+                <div class="w-full md:w-11/12 lg:w-full h-full mt-3">
                     <div class="post-carousel-1 adspace">
                         <!-- Overlay Post Start -->
                         {{-- @php print_r($ads);  @endphp --}}
@@ -136,7 +136,7 @@
                         
                     </div> 
                 </div>
-                <div class="w-full md:w-11/12 lg:w-full mt-3">
+                <div class="w-full md:w-11/12 lg:w-full h-full mt-3">
 
                     <!-- Political news -->
 
