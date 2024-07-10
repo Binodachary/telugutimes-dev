@@ -3271,7 +3271,7 @@ html {
      font-weight: 600;
      text-transform: uppercase;
      line-height: 30px;
-     padding: 5px 0px 10px 5px;
+     padding: 10px 0px 10px 11px;
      color: #ffffff;
      position: relative;
  }
@@ -3283,7 +3283,7 @@ html {
     text-transform: capitalize;
     padding-left: 15px;
     border-left: 4px solid #224893 !important;
-    margin-bottom: 5px;
+    margin-bottom: 10px !important;
  }
  .skyad2{
     width: 160px;

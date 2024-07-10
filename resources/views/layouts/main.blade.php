@@ -40,7 +40,7 @@
     @endif
     
     <x-banner class="skyad1"/>
-    <div class="lg:w-8/12 flex lg:space-x-3 md:space-y-1  mt-3 flex-col lg:flex-row mx-auto">
+    <div class="lg:w-8/12 flex lg:space-x-3 space-y-1  mt-3 flex-col lg:flex-row mx-auto">
         <?php //print_r($ads);?>
         @if(!empty($ads['menu-below']))
             @foreach($ads['menu-below'] as $ad)
@@ -54,7 +54,7 @@
         @endif
     </div>
     {{ $welcomeNote ?? "" }}
-    <main class="lg:w-8/12 md:grid   grid-cols-3 items-start md:divide-x-2 md:gap-x-3 px-2 lg:px-0 mx-auto">
+    <main class="container md:grid   grid-cols-3 items-start md:divide-x-2 md:gap-x-3 px-2 lg:px-0 mx-auto">
         {{ $slot }}
     </main>
     <x-banner class="skyad2"/>

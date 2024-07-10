@@ -2,7 +2,7 @@
    
     <div class="flex justify-center">
         
-        <div class="hidden lg:flex items-center lg:divide-x divide-solid divide-black">
+        <div class="container hidden lg:flex items-center lg:divide-x divide-solid divide-black">
             <x-reuse.menu-item href="/">
                 Home
             </x-reuse.menu-item>
