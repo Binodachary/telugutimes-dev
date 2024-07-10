@@ -1,5 +1,5 @@
-<footer class="lg:w-9/12 pt-4 bg-dark mt-4 mx-auto">
-    <div class="lg:w-full mx-auto px-6 lg:px-10 text-white space-y-8 leading-loose text-sm">
+<footer class="lg:w-8/12 pt-4 bg-dark mt-4 mx-auto">
+    <div class="lg:w-full mx-auto px-6 lg:px-6 text-white space-y-8 leading-loose text-sm">
         <div class="flex flex-col lg:flex-row items-center">
             <div class="lg:block lg:w-4/12 mb-10 text-center">
                 <a href="{{ route('advertise') }}" class="text-lg text-white font-bold">Advertise with Us</a>

@@ -12,8 +12,8 @@ html {
 }
 body {
     /* font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial,
-        sans-serif, Apple Color Emoji, Segoe UI Emoji;
-    margin: 0; */
+        sans-serif, Apple Color Emoji, Segoe UI Emoji; */
+    margin: 0;
     background-color: #ffffff;
     line-height: 24px;
     font-size: 14px;
@@ -1296,8 +1296,7 @@ html {
 }
 .bg-blue-500 {
     --tw-bg-opacity: 1;
-    background-image: linear-gradient(#032870, #264d98);
-
+    background-color: rgba(59, 130, 246, var(--tw-bg-opacity));
 }
 .bg-blue-600 {
     --tw-bg-opacity: 1;
@@ -3281,7 +3280,7 @@ html {
     border-left: 4px solid #224893;
  }
  .skyad2{
-    idth: 160px;
+    width: 160px;
     height: 600px;
     border: 1px solid #ebebeb;
     text-align: center;
