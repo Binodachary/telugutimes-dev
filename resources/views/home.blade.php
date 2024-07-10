@@ -176,6 +176,40 @@
                     </div>
                     <!-- Political news ends-->
                 </div>
+                <div class="md:w-11/12 lg:w-full mt-3 ">
+                    <div class="sidebar-block-wrapper">
+
+                        <!-- Sidebar Block Head Start -->
+                        <div class="head life-style-head redbg">
+
+                            <!-- Title -->
+                            <h4 class="title telugu">సినిమా | Cinema News</h4>
+
+
+
+                        </div><!-- Sidebar Block Head End -->
+
+                        <!-- Sidebar Block Body Start -->
+                        <div class="body">
+                            <ul class="post telugu">
+                                @php echo json_encode($cini_news_details);@endphp
+                                @foreach ($cini_news_details as $cini_news_data)
+                               
+                                <li><a href="#">{{shortText($cini_news_data->title,10)}}</a></li>
+                                @endforeach
+
+
+
+                            </ul>
+
+
+                        </div><!-- Sidebar Block Body End -->
+
+                        <!-- Read More Button -->
+                        <a href="#" class="read-more">Read more...</a>
+
+                    </div>
+                </div>
 
      
 </x-main-layout>

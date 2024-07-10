@@ -3069,6 +3069,11 @@ html {
     .md\:rounded-md {
         border-radius: 0.375rem;
     }
+    .md\:space-y-1 > :not([hidden]) ~ :not([hidden]) {
+        --tw-space-y-reverse: 0;
+        margin-bottom: calc(0.25rem * var(--tw-space-y-reverse));
+        margin-top: calc(0.25rem * (1 - var(--tw-space-y-reverse)));
+    }
 }
 @media (min-width: 1024px) {
     .lg\:fixed {

@@ -43,14 +43,19 @@ class HomeController extends Controller
          $poli_news_details = News::where(function ($que) use ($politicsCategory) {
             $que->whereJsonContains('category_json', $politicsCategory->id)
                 ->orwhereJsonContains('category_json', $politicsCategory->children->pluck('id'));
-        })->where('has_english', $filter_lang)->take(8)->get();
+        })->where('has_english', $filter_lang)->take(9)->get();
+        $ciniCategory = Category::where('slug', 'cinemas')->first();
+        $cini_news_details = News::where(function ($cini_que) use ($ciniCategory) {
+           $cini_que->whereJsonContains('category_json', $ciniCategory->id)
+               ->orwhereJsonContains('category_json', $ciniCategory->children->pluck('id'));
+       })->where('has_english', $filter_lang)->take(9)->get();
 //print_r($uri_news);die;
     // Output the formatted SQL
    // echo "SQL Query: $formattedSql";
        // print_r($news_details);die;
         return view("home",
             compact('categories', 'tabs', 'news', 'sidebarNews', 'associations', 'epapers', 'cinema_gallery',
-                'community_gallery', 'ads', 'videos', 'welcomeNote', 'language','highlights','news_details','uri_news','poli_news_details'));
+                'community_gallery', 'ads', 'videos', 'welcomeNote', 'language','highlights','news_details','uri_news','poli_news_details','cini_news_details'));
     }
     public function fetchNewsByCategory($categoryId)
 {
