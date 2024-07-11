@@ -19,6 +19,9 @@ class HomeController extends Controller
     public function home($language = null)
     {
         $news_categories =[];
+        $cinichild_id=[];
+        $commuchild_id=[];
+        $polichild_id=[];
         $categories = ['politics' => 'Political', 'cinemas' => 'Cinema', 'community' => 'Community'];
         [$tabs, $news] = $this->homeTabData($categories, $language);
 
@@ -33,26 +36,45 @@ class HomeController extends Controller
         $videos = Video::take(6)->get();
         $filter_lang = (!empty($this->language) && $this->language === 'eng') ? "YES" : "NO";
         $highlights = News::highlighted()->where('has_english', $filter_lang)->take(10)->get();
+
          $communityCategory = Category::where('slug', 'community')->first();
-         $news_details = News::where(function ($query) use ($communityCategory) {
-            $query->whereJsonContains('category_json', $communityCategory->id)
-                ->orwhereJsonContains('category_json', $communityCategory->children->pluck('id'));
+         $commuchild_id = $communityCategory->children->pluck('id');
+         $news_details = News::where(function ($query) use ($communityCategory,$commuchild_id) {
+            $query->whereJsonContains('category_json', $communityCategory->id);
+            foreach($commuchild_id as $commu_child_id){
+                $query->orwhereJsonContains('category_json', $communityCategory->children->pluck('id'));
+            }
         })->where('has_english', $filter_lang)->take(7)->get();
        $uri_news= News::whereJsonContains('category_json', $communityCategory->children->pluck('id'))->where('has_english', 'YES')->take(7)->get();
+
+
        $politicsCategory = Category::where('slug', 'politics')->first();
-         $poli_news_details = News::where(function ($que) use ($politicsCategory) {
-            $que->whereJsonContains('category_json', $politicsCategory->id)
-                ->orwhereJsonContains('category_json', $politicsCategory->children->pluck('id'));
+       $polichild_id= $politicsCategory->children->pluck('id');
+         $poli_news_details = News::where(function ($que) use ($politicsCategory,$polichild_id) {
+            $que->whereJsonContains('category_json', $politicsCategory->id);
+            foreach($polichild_id as $poli_child_id){
+                $que->orwhereJsonContains('category_json', $poli_child_id);
+            }
         })->where('has_english', $filter_lang)->take(9)->get();
+
         $ciniCategory = Category::where('slug', 'cinemas')->first();
-        $cini_news_details = News::where(function ($cini_que) use ($ciniCategory) {
-           $cini_que->whereJsonContains('category_json', $ciniCategory->id)
-               ->orwhereJsonContains('category_json', $ciniCategory->children->pluck('id'));
+       // print_r($ciniCategory);die;
+       $cinichild_id = $ciniCategory->children->pluck('id');
+        $cini_news_details = News::where(function ($cini_que) use ($ciniCategory,$cinichild_id) {
+           $cini_que->whereJsonContains('category_json', $ciniCategory->id);
+           foreach($cinichild_id as $cini_child_id){
+            $cini_que->orwhereJsonContains('category_json', $cini_child_id);
+           };
        })->where('has_english', $filter_lang)->take(9)->get();
-//print_r($uri_news);die;
-    // Output the formatted SQL
-   // echo "SQL Query: $formattedSql";
-       // print_r($news_details);die;
+    //    $sql = $cini_news_details->toSql();
+    //    $bindings = $cini_news_details->getBindings();
+       
+    //    $formattedSql = vsprintf(str_replace('?', "'%s'", $sql), array_map(function ($binding) {
+    //     return is_string($binding) ? addslashes($binding) : $binding;
+    // }, $bindings));
+    //    // Output the SQL query and bindings to the screen
+    //    dd('SQL Query: ' . $formattedSql, 'Bindings: ', $bindings);die;
+
         return view("home",
             compact('categories', 'tabs', 'news', 'sidebarNews', 'associations', 'epapers', 'cinema_gallery',
                 'community_gallery', 'ads', 'videos', 'welcomeNote', 'language','highlights','news_details','uri_news','poli_news_details','cini_news_details'));

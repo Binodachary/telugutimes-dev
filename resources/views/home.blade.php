@@ -176,7 +176,7 @@
                     </div>
                     <!-- Political news ends-->
                 </div>
-                <div class="md:w-11/12 lg:w-full mt-3 ">
+                <div class="md:w-11/12 lg:w-full h-full mt-3 ">
                     <div class="sidebar-block-wrapper">
 
                         <!-- Sidebar Block Head Start -->
@@ -192,7 +192,7 @@
                         <!-- Sidebar Block Body Start -->
                         <div class="body">
                             <ul class="post telugu">
-                                @php echo json_encode($cini_news_details);@endphp
+                                
                                 @foreach ($cini_news_details as $cini_news_data)
                                
                                 <li><a href="#">{{shortText($cini_news_data->title,10)}}</a></li>
@@ -210,6 +210,133 @@
 
                     </div>
                 </div>
+                <div class="md:w-11/12 lg:w-full h-full mt-3">
+                    @if(!empty($ads['home-right-top']))
+                    <div class="sidebar-block-wrapper">
 
+                        <!-- Sidebar Block Head Start -->
+                        <div class="head life-style-head redbg">
+
+                            <!-- Title -->
+                            <h4 class="title telugu">నేటి తార | Neti Taara</h4>
+
+                        </div><!-- Sidebar Block Head End -->
+
+                        <!-- Sidebar Block Body Start -->
+                        <div class="body">
+
+
+
+                            <!-- Post Start -->
+                           
+                            <div class="post life-style-post netitaara">
+                                <div class="post-wrap">
+
+                                    <!-- Image -->
+                                   
+                                    <a class="image" target="_blank" href="{{ $ads['home-right-top'][0]['url'] }}" title="{{ $ads['home-right-top'][0]['name'] }}"><img class="w-full object-cover" src="{{ asset("storage/advertisements/{$ads['home-right-top'][0]['image']}") }}" alt="{{ $ads['home-right-top'][0]['name'] }}"></a>
+                                    
+                                   
+
+                                </div>
+                            </div>
+                            @endif<!-- Post End -->
+                        </div>
+                    </div>
+                    <a href="{{ $ads['home-right-top'][1]['url'] }}" title="{{ $ads['home-right-top'][1]['name'] }}" class="show-modal horoscope"><img src="{{ asset("storage/advertisements/{$ads['home-right-top'][1]['image']}") }}" alt="{{ $ads['home-right-top'][1]['name'] }}"></a>
+                </div>
+                <div class="md:w-11/12 lg:w-full mt-3">
+                    <div class="sidebar-block-wrapper mt-10 mobileonly">
+
+                        <!-- Sidebar Block Head Start -->
+                        <div class="head feature-head bluebg">
+
+                            <!-- Title -->
+                            <h4 class="title">E-Paper</h4>
+
+                        </div><!-- Sidebar Block Head End -->
+
+                        <!-- Sidebar Block Body Start -->
+                        <div class="body">
+
+                            <!-- Sidebar Post Slider Start -->
+                            <div class="sidebar-post-carousel post-block-carousel life-style-post-carousel">
+
+                                <!-- Post Start -->
+                                <div class="epaper post life-style-post">
+                                    <div class="post-wrap epaper">
+
+                                        <!-- Image -->
+                                        <a class="image" href="#!"><img src="img/apr1.webp" alt="post"></a>
+
+                                        <!-- Content -->
+                                        <div class="content">
+
+                                            <!-- Title -->
+                                            <h4 class="title"><a href="#!">April 1st-15th</a></h4>
+
+                                        </div>
+
+                                    </div>
+                                </div><!-- Post End -->
+
+                                <!-- Post Start -->
+                                <div class="epaper post life-style-post">
+                                    <div class="epaper post-wrap epaper">
+
+                                        <!-- Image -->
+                                        <a class="image" href="#!"><img src="img/mar2.webp" alt="post"></a>
+
+                                        <!-- Content -->
+                                        <div class="content">
+
+                                            <!-- Title -->
+                                            <h4 class="title"><a href="#!">March 15th-31st & 21st Anniversary
+                                                    Special</a></h4>
+
+
+                                        </div>
+
+                                    </div>
+                                </div><!-- Post End -->
+
+
+
+                                <!-- Post Start -->
+                                <div class="epaper post life-style-post">
+                                    <div class="post-wrap epaper">
+
+                                        <!-- Image -->
+                                        <a class="image" href="#!"><img src="img/mar1.webp" alt="post"></a>
+
+                                        <!-- Content -->
+                                        <div class="content">
+
+                                            <!-- Title -->
+                                            <h4 class="title"><a href="#!">March 1st-15th</a></h4>
+
+
+                                        </div>
+
+                                    </div>
+                                </div><!-- Post End -->
+
+
+
+
+
+                            </div>
+                            <a href="#" class="read-more">View all</a>
+                        </div>
+
+                    </div>
+                    <!-- E-Paper Ends Mobile version only-->
+
+                    <!-- Ads space Starts Mobile only-->
+                    <div class="squaread3 mobileonly">
+                        <p>Google Adspace</p>
+                        <p>"medium rectangle 300x250"</p>
+                    </div>
+                </div>
      
 </x-main-layout>
