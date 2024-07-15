@@ -3,13 +3,15 @@
 <head>
     @include("partials.meta-tags",[$pageTitle ?? "",$pageKeywords ?? "",$pageDescription ?? "",$pageImage ?? ""])
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
-    {{-- <link rel="stylesheet" href="{{ asset('css/font-awesome.min.css') }}"> --}}
-    <link rel="stylesheet" href="{{ asset('css/plugins.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/>
+
+    {{-- <link rel="stylesheet" href="{{ asset('css/plugins.css') }}"> --}}
     <link rel="stylesheet" href="{{ asset('css/ycp.css') }}">
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
-    {{-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"> --}}
     
-    {{-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"> --}}
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css"/>
+    
     {{ $styles ?? "" }}
     @livewireStyles
     <style>
@@ -83,6 +85,7 @@
                 pauseOnFocus: false,
                 pauseOnHover: false,
                 infinite: true,
+                arrows: true,
                 slidesToShow: 1,
                 prevArrow: '<button type="button" class="slick-prev"><i class="fa fa-angle-left"></i></button>',
                 nextArrow: '<button type="button" class="slick-next"><i class="fa fa-angle-right"></i></button>',
@@ -95,7 +98,18 @@
                     }
                 ]
             });
-        });
+            $('.sidebar-post-carousel').slick({
+                autoplay: true,
+                autoplaySpeed: 5000,
+                pauseOnFocus: false,
+                pauseOnHover: false,
+                infinite: true,
+                arrows: true,
+                slidesToShow: 1,
+                prevArrow: '<button type="button" class="slick-prev"><i class="fa fa-angle-left"></i></button>',
+                nextArrow: '<button type="button" class="slick-next"><i class="fa fa-angle-right"></i></button>',
+            });
+         });
         
         document.addEventListener("DOMContentLoaded", function() {
         // Get all tab links

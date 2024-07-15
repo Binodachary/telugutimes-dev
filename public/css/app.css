@@ -3058,7 +3058,7 @@ html {
     }
     .md\:divide-x-2 > :not([hidden]) ~ :not([hidden]) {
         --tw-divide-x-reverse: 0;
-        border-left-width: calc(2px * (1 - var(--tw-divide-x-reverse)));
+        /* border-left-width: calc(2px * (1 - var(--tw-divide-x-reverse))); */
         border-right-width: calc(2px * var(--tw-divide-x-reverse));
     }
     .md\:divide-x > :not([hidden]) ~ :not([hidden]) {

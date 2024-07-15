@@ -24,7 +24,7 @@ class HomeController extends Controller
         $polichild_id=[];
         $categories = ['politics' => 'Political', 'cinemas' => 'Cinema', 'community' => 'Community'];
         [$tabs, $news] = $this->homeTabData($categories, $language);
-
+        //echo $language;die;
         $welcomeNote = WelcomeNote::first();
         $sidebarNews = $this->sidebarNews($language);
         $associations = Association::all();
@@ -34,7 +34,7 @@ class HomeController extends Controller
         $ads = Advertisement::whereNotIn('position', ['logo-top-left', 'logo-top-right'])->get();
         $ads = $ads->groupBy('position')->all();
         $videos = Video::take(6)->get();
-        $filter_lang = (!empty($this->language) && $this->language === 'eng') ? "YES" : "NO";
+        $filter_lang = (!empty($language) && $language === 'eng') ? "YES" : "NO";
         $highlights = News::highlighted()->where('has_english', $filter_lang)->take(10)->get();
 
          $communityCategory = Category::where('slug', 'community')->first();

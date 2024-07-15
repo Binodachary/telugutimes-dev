@@ -244,92 +244,20 @@
                         </div>
                     </div>
                     <a href="{{ $ads['home-right-top'][1]['url'] }}" title="{{ $ads['home-right-top'][1]['name'] }}" class="show-modal horoscope"><img src="{{ asset("storage/advertisements/{$ads['home-right-top'][1]['image']}") }}" alt="{{ $ads['home-right-top'][1]['name'] }}"></a>
-                </div>
-                <div class="md:w-11/12 lg:w-full mt-3">
-                    <div class="sidebar-block-wrapper mt-10 mobileonly">
-
-                        <!-- Sidebar Block Head Start -->
-                        <div class="head feature-head bluebg">
-
-                            <!-- Title -->
-                            <h4 class="title">E-Paper</h4>
-
-                        </div><!-- Sidebar Block Head End -->
-
-                        <!-- Sidebar Block Body Start -->
-                        <div class="body">
-
-                            <!-- Sidebar Post Slider Start -->
-                            <div class="sidebar-post-carousel post-block-carousel life-style-post-carousel">
-
-                                <!-- Post Start -->
-                                <div class="epaper post life-style-post">
-                                    <div class="post-wrap epaper">
-
-                                        <!-- Image -->
-                                        <a class="image" href="#!"><img src="img/apr1.webp" alt="post"></a>
-
-                                        <!-- Content -->
-                                        <div class="content">
-
-                                            <!-- Title -->
-                                            <h4 class="title"><a href="#!">April 1st-15th</a></h4>
-
-                                        </div>
-
-                                    </div>
-                                </div><!-- Post End -->
-
-                                <!-- Post Start -->
-                                <div class="epaper post life-style-post">
-                                    <div class="epaper post-wrap epaper">
-
-                                        <!-- Image -->
-                                        <a class="image" href="#!"><img src="img/mar2.webp" alt="post"></a>
-
-                                        <!-- Content -->
-                                        <div class="content">
-
-                                            <!-- Title -->
-                                            <h4 class="title"><a href="#!">March 15th-31st & 21st Anniversary
-                                                    Special</a></h4>
-
-
-                                        </div>
-
-                                    </div>
-                                </div><!-- Post End -->
-
-
-
-                                <!-- Post Start -->
-                                <div class="epaper post life-style-post">
-                                    <div class="post-wrap epaper">
-
-                                        <!-- Image -->
-                                        <a class="image" href="#!"><img src="img/mar1.webp" alt="post"></a>
-
-                                        <!-- Content -->
-                                        <div class="content">
-
-                                            <!-- Title -->
-                                            <h4 class="title"><a href="#!">March 1st-15th</a></h4>
-
-
-                                        </div>
-
-                                    </div>
-                                </div><!-- Post End -->
-
-
-
-
-
-                            </div>
-                            <a href="#" class="read-more">View all</a>
-                        </div>
-
-                    </div>
+            
+                
+                    @include('partials.home-slider-component',
+                    [        'viwetype'=>'mobileonly',
+                           
+                            'heading'=>'E-Paper',
+                            'items'=> $epapers,
+                            'linkRoute'=> 'edition',
+                            'filter' => 'review',
+                            'folder' => 'folder',
+                            'text' => 'edition_year,edition_month,name',
+                            'notAdded' => 'Epapers',
+                            'url' => route("epapers")
+                    ])
                     <!-- E-Paper Ends Mobile version only-->
 
                     <!-- Ads space Starts Mobile only-->
@@ -337,6 +265,135 @@
                         <p>Google Adspace</p>
                         <p>"medium rectangle 300x250"</p>
                     </div>
+                </div>
+                <div class="md:w-11/12 lg:w-full mt-3">
+                    @include('partials.home-slider-component',
+                        [   'hbg'=>  'life-style-head redbg',
+                            'heading'=>'USA Upcoming Events',
+                            'items'=> $sidebarNews['events'],
+                            'linkRoute'=> 'article',
+                            'filter' => 'review',
+                            'image' => 'image',
+                            'text' => 'title',
+                            'notAdded' => 'Upcoming events',
+                            'url' => route("categoryNews",'events')
+                        ])
+                    
+                </div>
+                   <div class="md:w-11/12 lg:w-full mt-3">
+                    @include('partials.home-gallery-slider-component',
+                        [
+                            'hbg'=>  'life-style-head redbg',
+                            'heading'=>'Community Gallery',
+                            'items'=> $community_gallery,
+                            'linkRoute'=> 'photos',
+                            'filter' => 'review',
+                            'gallery' => 'gallery_path',
+                            'text' => 'name',
+                            'notAdded' => 'Community galleries',
+                            'url' => route("gallery.category",'america')
+                        ])
+                </div>
+                <div class="md:w-11/12 lg:w-full mt-3">
+                    @include('partials.home-slider-component',
+                    [        'viwetype'=>'desktoponly',
+                           
+                            'heading'=>'E-Paper',
+                            'items'=> $epapers,
+                            'linkRoute'=> 'edition',
+                            'filter' => 'review',
+                            'folder' => 'folder',
+                            'text' => 'edition_year,edition_month,name',
+                            'notAdded' => 'Epapers',
+                            'url' => route("epapers")
+                    ])
+                </div>
+                <div class="md:w-11/12 lg:w-full h-full mt-3 ">
+                    <div class="sidebar-block-wrapper">
+
+                        <!-- Sidebar Block Head Start -->
+                        <div class="head life-style-head redbg">
+
+                            <!-- Title -->
+                            <h4 class="title telugu">Cinema Reviews</h4>
+
+
+
+                        </div><!-- Sidebar Block Head End -->
+
+                        <!-- Sidebar Block Body Start -->
+                        <div class="body">
+                            @if($sidebarNews['cinema-reviews']->count()>0)
+                            <ul class="post telugu">
+                                
+                                @foreach ($sidebarNews['cinema-reviews'] as $cini_revi_data)
+                               
+                                <li><a href="#">{{shortText($cini_revi_data->title,10)}}</a></li>
+                                @endforeach
+
+
+
+                            </ul>
+                            @else
+                            <h3> Cinema Reviews are not added yet.</h3>
+                            @endif
+
+                        </div><!-- Sidebar Block Body End -->
+
+                        <!-- Read More Button -->
+                        <a href="#" class="read-more">Read more...</a>
+
+                    </div>
+                </div>
+                <div class="md:w-11/12 lg:w-full h-full mt-3 ">
+                    <div class="sidebar-block-wrapper">
+
+                        <!-- Sidebar Block Head Start -->
+                        <div class="head life-style-head redbg">
+
+                            <!-- Title -->
+                            <h4 class="title telugu">Cinema Interviews</h4>
+
+
+
+                        </div><!-- Sidebar Block Head End -->
+
+                        <!-- Sidebar Block Body Start -->
+                        <div class="body">
+                            @if($sidebarNews['cinema-interviews']->count()>0)
+                            <ul class="post telugu">
+                               
+                                @foreach ($sidebarNews['cinema-interviews'] as $cini_int_data)
+                               
+                                <li><a href="#">{{shortText($cini_int_data->title,10)}}</a></li>
+                                @endforeach
+
+
+
+                            </ul>
+                            @else
+                            <h3> Cinema Interviews are not added yet.</h3>
+                            @endif
+
+                        </div><!-- Sidebar Block Body End -->
+
+                        <!-- Read More Button -->
+                        <a href="#" class="read-more">Read more...</a>
+
+                    </div>
+                </div>
+                <div class="md:w-11/12 lg:w-full mt-3">
+                    @include('partials.home-gallery-slider-component',
+                        [
+                            'heading'=>'Cinema Gallery',
+                            'items'=> $cinema_gallery,
+                            'linkRoute'=> 'photos',
+                            'filter' => 'review',
+                            'gallery' => 'gallery_path',
+                            'text' => 'name',
+                            'notAdded' => 'Cinema galleries',
+                            'url' => route("gallery.category","cinema")
+                        ])
                 </div>
      
 </x-main-layout>
