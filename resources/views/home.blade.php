@@ -69,14 +69,14 @@
                         <!-- Sidebar Block Body Start -->
                         <div class="body">
                             <div class="tab-content">
-                                <div class="tab-pane active" id="community">
+                                <div class="tab-pane2 active" id="community">
                                     <ul class="post telugu">
                                         @foreach ($news_details as $news_data)
                                         <li><a href="#">{{shortText($news_data->title,10)}}</a></li>
                                         @endforeach
                                     </ul>
                                 </div>
-                                <div class="tab-pane assoications" id="usanri">
+                                <div class="tab-pane2 assoications" id="usanri">
                                     {{-- <ul class="">
                                         @foreach ($uri_news as $usa_news)
                                         <li><a href="#">{{shortText($usa_news->title,9)}}</a></li>
@@ -109,8 +109,9 @@
 
                     <!-- Google Square Ad -->
                     <div class="squaread mt-10 hidden lg:block">
-                        <p>Google Adspace</p>
-                        <p>"medium rectangle 300x160"</p>
+                        {{-- <p>Google Adspace</p>
+                        <p>"medium rectangle 300x160"</p> --}}
+                        <a href="#!"><img style="max-width: 100%; height: auto;" src="{{ asset("storage/advertisements/{$ads['home-middle-center'][0]->image}") }}" alt="{{ $ads['home-middle-center'][0]->name }}"></a>
                     </div>
                 </div>
                 <!-- NRI News Section -->

@@ -5,12 +5,12 @@
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/>
 
-    {{-- <link rel="stylesheet" href="{{ asset('css/plugins.css') }}"> --}}
+    <link rel="stylesheet" href="{{ asset('css/plugins.css') }}">
     <link rel="stylesheet" href="{{ asset('css/ycp.css') }}">
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css"/>
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css"/>
+    {{-- <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css"/> --}}
     
     {{ $styles ?? "" }}
     @livewireStyles
@@ -42,7 +42,7 @@
     @endif
     
     <x-banner class="skyad1"/>
-    <div class="lg:w-8/12 flex lg:space-x-3 space-y-1  mt-3 flex-col lg:flex-row mx-auto">
+    <div class="container flex lg:space-x-3 space-y-1  mt-3 flex-col lg:flex-row mx-auto">
         <?php //print_r($ads);?>
         @if(!empty($ads['menu-below']))
             @foreach($ads['menu-below'] as $ad)
@@ -132,7 +132,7 @@
                 const targetId = link.getAttribute('data-tab-target');
 
                 // Hide all tab panes
-                const tabContents = document.querySelectorAll('.tab-pane');
+                const tabContents = document.querySelectorAll('.tab-pane2');
                 tabContents.forEach(function(tab) {
                     tab.classList.remove('active');
                 });

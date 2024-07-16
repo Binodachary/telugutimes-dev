@@ -1,3 +1,4 @@
+{{-- @php print_r($newsItems);  @endphp --}}
 <x-main-layout>
     <x-slot name="pageTitle">{{ $category->title }}</x-slot>
     <x-slot name="pageImage">{{ asset("storage/categories/{$category->image}") }}</x-slot>

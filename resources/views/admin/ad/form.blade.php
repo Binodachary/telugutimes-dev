@@ -71,6 +71,7 @@
                                 <p class="bg-gray-500 text-xs p-1">highlight-news-below</p>
                                 <p class="bg-gray-500 text-xs p-1">advertise-title-below</p>
                                 <p class="bg-gray-500 text-xs p-1">menu-below</p>
+                                <p class="bg-gray-500 text-xs p-1">home-middle-center</p>
                             </div>
                         </div>
                     </div>
