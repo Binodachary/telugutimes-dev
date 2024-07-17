@@ -1,6 +1,6 @@
 <nav v-click-outside="closeSidebar" :class="{'fixed top-0 lg:w-full': stickyHeader }" style="background-color:#224893;" class="border-b w-full z-10">
    
-    <div class="container flex justify-center mx-auto">
+    <div class="flex justify-center mx-auto">
         
         <!-- Hamburger -->
         <div class="flex items-center lg:hidden w-1/12">
@@ -11,7 +11,7 @@
                 </svg>
             </button>
         </div>
-        <div class="container hidden lg:flex items-center lg:divide-x divide-solid divide-black">
+        <div class="hidden lg:flex items-center lg:divide-x divide-solid divide-black">
             <x-reuse.menu-item href="/">
                 Home
             </x-reuse.menu-item>
@@ -62,7 +62,7 @@
         @endforeach
     </div> -->
 
-    <div :class="{'opacity-100': open, 'opacity-0': !open, 'pointer-events-auto': open, 'pointer-events-none': !open}" v-cloak class="divide-black divide-solid divide-y inset-y-10 left-0 transform-gpu z-10 transition w-full duration-300 ease-linear" style="position: absolute;background-color: rgb(34, 72, 147);">
+    <div :class="{'opacity-100': open, 'opacity-0': !open, 'pointer-events-auto': open, 'pointer-events-none': !open,relative: open }" v-cloak class="divide-black divide-solid divide-y inset-y-10 left-0 transform-gpu z-10 transition w-full duration-300 ease-linear block absolute lg:hidden" style="background-color: rgb(34, 72, 147);">
         <x-reuse.menu-item href="/" style="padding-top: 8px!important;" :active="request()->routeIs('home')" class="w-full">
             Home
         </x-reuse.menu-item>
