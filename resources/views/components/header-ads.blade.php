@@ -9,10 +9,6 @@ border-bottom: 1px solid #f1f1f1;
 background-color: #224893;
 border-bottom: none;
 }
-/*-- Header Top Links --*/
-.header-top-links {
-/*-- Header Links --*/
-}
 @media only screen and (max-width: 479px) {
 .header-top-links {
   min-width: 100%;
@@ -103,9 +99,6 @@ margin-bottom: -10px;
 .header-top-links .header-links li.disabled a:hover {
 color: #ffffff;
 }
-.header-top-links .header-links.header-links-2 li {
-/*-- Disabled Link --*/
-}
 .header-top-links .header-links.header-links-2 li a {
 color: #ffffff;
 }
@@ -122,9 +115,6 @@ margin-bottom: 0;
 .header-top-links .header-links.header-links-2 li.disabled a:hover {
 color: #ffffff;
 }
-.header-top-links .header-links.header-links-3 li {
-/*-- Disabled Link --*/
-}
 .header-top-links .header-links.header-links-3 li a:hover {
 color: #de292d;
 }
@@ -139,10 +129,6 @@ margin-bottom: 0;
 color: #de292d;
 }
 
-/*-- Header Top Social --*/
-.header-top-social {
-/*-- Header Social --*/
-}
 @media only screen and (max-width: 479px) {
 .header-top-social {
   min-width: 100%;
@@ -196,10 +182,6 @@ color: #de292d;
 padding: 0;
 }
 
-/*-- Header Logo --*/
-.header-logo {
-/*-- Logo --*/
-}
 .header-logo .logo {
 display: block;
 float: left;
