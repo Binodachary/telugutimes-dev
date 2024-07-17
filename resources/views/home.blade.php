@@ -18,7 +18,7 @@
     @endif
    
                 <!-- News Headlines Section -->
-                <div class="w-full md:w-11/12 lg:w-full h-full mt-3">
+                <div class="w-full lg:w-3-5/12 h-full mt-3">
                     <div class="headlines">
                         <h4 class="telugu">ముఖ్యాంశాలు | News Headlines</h4>
                     </div>
@@ -55,7 +55,7 @@
                         <p>"medium rectangle 300x160"</p>
                     </div>
                 </div>
-                <div class="w-full md:w-11/12 lg:w-full h-full mt-3">
+                <div class="w-full lg:w-3-5/12 h-full mt-3">
                     <div class="sidebar-block-wrapper">
                         <!-- Sidebar Block Head Start -->
                         <div class="head education-head">
@@ -111,11 +111,11 @@
                     <div class="squaread mt-10 hidden lg:block">
                         {{-- <p>Google Adspace</p>
                         <p>"medium rectangle 300x160"</p> --}}
-                        <a href="#!"><img style="max-width: 100%; height: auto;" src="{{ asset("storage/advertisements/{$ads['home-middle-center'][0]->image}") }}" alt="{{ $ads['home-middle-center'][0]->name }}"></a>
+                        <a href="#!"><img style="max-width: 100%; height: auto;" src="{{ asset("storage/advertisements/{$ads['home-middle-center'][0]->image}") }}" alt="{{ $ads['home-middle-center'][0]->name }}"></a>
                     </div>
                 </div>
                 <!-- NRI News Section -->
-                <div class="w-full md:w-11/12 lg:w-full h-full mt-3">
+                <div class="w-full lg:w-3-5/12 h-full mt-3">
                     <div class="post-carousel-1 adspace">
                         <!-- Overlay Post Start -->
                         {{-- @php print_r($ads);  @endphp --}}
@@ -137,7 +137,7 @@
                         
                     </div> 
                 </div>
-                <div class="w-full md:w-11/12 lg:w-full h-full mt-3">
+                <div class="w-full lg:w-3-5/12 h-full mt-3">
 
                     <!-- Political news -->
 
@@ -177,7 +177,7 @@
                     </div>
                     <!-- Political news ends-->
                 </div>
-                <div class="md:w-11/12 lg:w-full h-full mt-3 ">
+                <div class="w-full lg:w-3-5/12 h-full mt-3">
                     <div class="sidebar-block-wrapper">
 
                         <!-- Sidebar Block Head Start -->
@@ -211,7 +211,7 @@
 
                     </div>
                 </div>
-                <div class="md:w-11/12 lg:w-full h-full mt-3">
+                <div class="w-full lg:w-3-5/12 h-full mt-3">
                     @if(!empty($ads['home-right-top']))
                     <div class="sidebar-block-wrapper">
 
@@ -267,7 +267,7 @@
                         <p>"medium rectangle 300x250"</p>
                     </div>
                 </div>
-                <div class="md:w-11/12 lg:w-full mt-3">
+                <div class="w-full lg:w-3-5/12 h-full mt-3">
                     @include('partials.home-slider-component',
                         [   'hbg'=>  'life-style-head redbg',
                             'heading'=>'USA Upcoming Events',
@@ -281,7 +281,7 @@
                         ])
                     
                 </div>
-                   <div class="md:w-11/12 lg:w-full mt-3">
+                   <div class="w-full lg:w-3-5/12 h-full mt-3">
                     @include('partials.home-gallery-slider-component',
                         [
                             'hbg'=>  'life-style-head redbg',
@@ -295,7 +295,7 @@
                             'url' => route("gallery.category",'america')
                         ])
                 </div>
-                <div class="md:w-11/12 lg:w-full mt-3">
+                <div class="w-full lg:w-3-5/12 h-full mt-3">
                     @include('partials.home-slider-component',
                     [        'viwetype'=>'desktoponly',
                            
@@ -309,7 +309,7 @@
                             'url' => route("epapers")
                     ])
                 </div>
-                <div class="md:w-11/12 lg:w-full h-full mt-3 ">
+                <div class="w-full lg:w-3-5/12 h-full mt-3">
                     <div class="sidebar-block-wrapper">
 
                         <!-- Sidebar Block Head Start -->
@@ -346,7 +346,7 @@
 
                     </div>
                 </div>
-                <div class="md:w-11/12 lg:w-full h-full mt-3 ">
+                <div class="w-full lg:w-3-5/12 h-full mt-3">
                     <div class="sidebar-block-wrapper">
 
                         <!-- Sidebar Block Head Start -->
@@ -383,7 +383,7 @@
 
                     </div>
                 </div>
-                <div class="md:w-11/12 lg:w-full mt-3">
+                <div class="w-full lg:w-3-5/12 h-full mt-3">
                     @include('partials.home-gallery-slider-component',
                         [
                             'heading'=>'Cinema Gallery',
