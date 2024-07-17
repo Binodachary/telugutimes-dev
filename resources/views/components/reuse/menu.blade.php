@@ -1,4 +1,4 @@
-<nav v-click-outside="closeSidebar" :class="{'lg:fixed lg:top-0 lg:w-full': stickyHeader }" style="background-color:#224893;" class="border-b w-full z-10">
+<nav v-click-outside="closeSidebar" :class="{'fixed top-0 lg:w-full': stickyHeader }" style="background-color:#224893;" class="border-b w-full z-10">
    
     <div class="flex justify-center">
         
