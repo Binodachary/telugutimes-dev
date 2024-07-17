@@ -260,12 +260,12 @@ height: 90px;
       <div class="flex items-center justify-between">
          
           <!-- Header Logo -->
-          <div class="header-logo  hidden md:block md:w-1/3">
+          <div class="header-logo  hidden md:block md:w-5/12">
               <a href="index.html" class="block"><img src="/images/logo.png" class="max-w-full h-23" alt="Telugu Times News"></a>
           </div>
           
           <!-- Header Banner -->
-          <div class="header-banner w-full md:w-2/3">
+          <div class="header-banner w-full md:w-7/12">
               <div class="banner"> 
                   @if(!empty($ads['logo-top-right-full']))
                   @foreach($ads['logo-top-right-full'] as $ad)

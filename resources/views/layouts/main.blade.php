@@ -56,7 +56,7 @@
         @endif
     </div>
     {{ $welcomeNote ?? "" }}
-    <main class="container md:grid   grid-cols-3 items-start md:divide-x-2 md:gap-x-3 px-2 lg:px-0 mx-auto">
+    <main class="container items-start md:divide-x-2 md:gap-x-3 px-1 lg:px-0 mx-auto flex flex-wrap">
         {{ $slot }}
     </main>
     <x-banner class="skyad2"/>
