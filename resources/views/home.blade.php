@@ -70,11 +70,17 @@
                         <div class="body">
                             <div class="tab-content">
                                 <div class="tab-pane2 active" id="community">
+                                    @if($news_details->isNotEmpty())
                                     <ul class="post telugu">
                                         @foreach ($news_details as $news_data)
-                                        <li><a href="#">{{shortText($news_data->title,10)}}</a></li>
+                                        <li><a href="{{route('article',$news_data->slug)}}">{{shortText($news_data->title,10)}}</a></li>
                                         @endforeach
                                     </ul>
+                                    @else
+                                    <ul class="post telugu">
+                                        <li>No News added in this category.</li>
+                                    </ul>
+                                    @endif
                                 </div>
                                 <div class="tab-pane2 assoications" id="usanri">
                                     {{-- <ul class="">
@@ -157,7 +163,7 @@
                             <ul class="post telugu">
                                 @foreach ($poli_news_details as $poli_news_data)
                                
-                                <li><a href="#">{{shortText($poli_news_data->title,10)}}</a></li>
+                                <li><a href="{{route('article',$poli_news_data->slug)}}">{{shortText($poli_news_data->title,10)}}</a></li>
                                 @endforeach
                                 {{-- <li><a href="#!">లోకేష్ ఫోన్ ట్యాప్! ఈసీకి టీడీపీ కంప్లైంట్</a></li>
                                 <li><a href="#!">ధాన్యం కొనుగోలు, నీటి సరఫరా అంశాలపై స్పందించిన రేవంత్
@@ -196,7 +202,7 @@
                                 
                                 @foreach ($cini_news_details as $cini_news_data)
                                
-                                <li><a href="#">{{shortText($cini_news_data->title,10)}}</a></li>
+                                <li><a href="{{route('article',$cini_news_data->slug)}}">{{shortText($cini_news_data->title,10)}}</a></li>
                                 @endforeach
 
 
@@ -329,7 +335,7 @@
                                 
                                 @foreach ($sidebarNews['cinema-reviews'] as $cini_revi_data)
                                
-                                <li><a href="#">{{shortText($cini_revi_data->title,10)}}</a></li>
+                                <li><a href="{{route('article',$cini_revi_data->slug)}}">{{shortText($cini_revi_data->title,10)}}</a></li>
                                 @endforeach
 
 
@@ -366,7 +372,7 @@
                                
                                 @foreach ($sidebarNews['cinema-interviews'] as $cini_int_data)
                                
-                                <li><a href="#">{{shortText($cini_int_data->title,10)}}</a></li>
+                                <li><a href="{{route('article',$cini_int_data->slug)}}">{{shortText($cini_int_data->title,10)}}</a></li>
                                 @endforeach
 
 
