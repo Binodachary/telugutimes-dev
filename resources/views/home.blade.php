@@ -32,8 +32,12 @@
                             <div class="post post-large post-overlay hero-post">
                                 <div class="post-wrap">
                                     <!-- Image -->
-                                    <div class="image"><img src="{{ asset("/images/small/{$highlight->image}") }}"
-                                            alt="{{ $highlight->title }}"></div>
+                                    <div class="">
+                                        <a class="image" href="{{ route('article', $highlight)}}" class="category politic">
+                                            <img src="{{ asset("/images/small/{$highlight->image}") }}"
+                                            alt="{{ $highlight->title }}">
+                                        </a>
+                                    </div>
                                     <!-- Category -->
                                     <a href="{{ route('article', $highlight)}}" class="category politic"></a>
                                     <!-- Content -->
