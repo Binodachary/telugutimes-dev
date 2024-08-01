@@ -1,3 +1,4 @@
+
 <x-main-layout>
     <x-slot name="pageTitle">Latest Telugu News | తెలుగు వార్తలు | NRI Telugu News Paper in USA - Telugu Times</x-slot>
     <x-slot name="pageDescription"> Read all the Latest Telugu News. Online edition of the largest circulated Telugu
@@ -18,7 +19,7 @@
     @endif
    
                 <!-- News Headlines Section -->
-                <div class="w-full lg:w-3-5/12 h-full mt-3">
+                <div class="w-full mt-3">
                     <div class="headlines">
                         <h4 class="telugu">ముఖ్యాంశాలు | News Headlines</h4>
                     </div>
@@ -36,7 +37,7 @@
                                     <!-- Category -->
                                     <a href="{{ route('article', $highlight)}}" class="category politic"></a>
                                     <!-- Content -->
-                                    <div class="content">
+                                    <div class="content" style="left:0px;right:0px;bottom: 0px;text-align:center;text-wrap:wrap;width:100%;background-color:black;width:100%">
                                         <!-- Title -->
                                         <h2 class="title telugu"><a href="{{route('article', $highlight)}}">{{ shortText($highlight->description, 5) }}</a></h2>
                                     </div>
@@ -51,18 +52,25 @@
 
                     <!-- Google Square Ad -->
                     <div class="squaread mt-10 hidden lg:block">
-                        <p>Google Adspace</p>
-                        <p>"medium rectangle 300x160"</p>
+                        <ins class="adsbygoogle"
+                            style="display:block"
+                            data-ad-client="ca-pub-1037561410743863"
+                            data-ad-slot="5073869562"
+                            data-ad-format="auto"
+                            data-full-width-responsive="true"></ins>
+                        <script>
+                            (adsbygoogle = window.adsbygoogle || []).push({});
+                        </script>
                     </div>
                 </div>
-                <div class="w-full lg:w-3-5/12 h-full mt-3">
-                    <div class="sidebar-block-wrapper">
+                <div class="w-full mt-3">
+                    <div class="sidebar-block-wrapper" style="height: 330px;">
                         <!-- Sidebar Block Head Start -->
                         <div class="head education-head">
                             <!-- Tab List -->
                             <div class="sidebar-tab-list education-sidebar-tab-list nav">
-                                <a class="tab-link active" data-tab-target="#community">Community News</a>
-                                <a class="tab-link" data-tab-target="#usanri">Associations</a>
+                                <a class="tab-link active" data-tab-target="#community">USA NRI NEWS </a>
+                                <a class="tab-link" data-tab-target="#usanri">TELUGU ASSOCIATIONS</a>
                             </div>
                         </div><!-- Sidebar Block Head End -->
 
@@ -73,7 +81,7 @@
                                     @if($news_details->isNotEmpty())
                                     <ul class="post telugu">
                                         @foreach ($news_details as $news_data)
-                                        <li><a href="{{route('article',$news_data->slug)}}">{{shortText($news_data->title,10)}}</a></li>
+                                        <li><a href="{{route('article',$news_data->slug)}}">{{shortText($news_data->title,8)}}</a></li>
                                         @endforeach
                                     </ul>
                                     @else
@@ -92,7 +100,7 @@
                                     <x-reuse.slider options="{type:'loop',perPage: 1,autoplay: true,pauseOnHover: true,interval: 6000,pagination: true,arrows:false}">
                                         @foreach($associations->chunk(10) as $newsItems)
                                             <x-reuse.carousel-item class="max-w-full">
-                                                <div class="association-body gap-1 grid grid-cols-4 justify-items-stretch lg:grid-cols-4 xl:grid-cols-5">
+                                                <div class="association-body gap-1 grid grid-cols-4 justify-items-stretch lg:grid-cols-4 xl:grid-cols-4">
                                                     @foreach($newsItems as $association)
                                                         <div class="association">
                                                             <a href="{{ route('association',$association->name) }}">
@@ -105,7 +113,7 @@
                                         @endforeach
                                     </x-reuse.slider>
                                 @else
-                                    <h1 class="text-lg">No association has been added yet.</h1>
+                                    <h1 class="text-lg">No Telugu association has been added yet.</h1>
                                 @endif
 
                                 </div>
@@ -117,11 +125,12 @@
                     <div class="squaread mt-10 hidden lg:block">
                         {{-- <p>Google Adspace</p>
                         <p>"medium rectangle 300x160"</p> --}}
-                        <a href="#!"><img style="max-width: 100%; height: auto;" src="{{ asset("storage/advertisements/{$ads['home-middle-center'][0]->image}") }}" alt="{{ $ads['home-middle-center'][0]->name }}"></a>
+                       
+                        <a class="image" target="_blank" href="{{ $ads['home-middle-center'][0]->url}}"><img style="max-width: 100%; height: auto;" src="{{ asset("storage/advertisements/{$ads['home-middle-center'][0]->image}") }}" alt="{{ $ads['home-middle-center'][0]->name }}"></a>
                     </div>
                 </div>
                 <!-- NRI News Section -->
-                <div class="w-full lg:w-3-5/12 h-full mt-3">
+                <div class="w-full mt-3">
                     <div class="post-carousel-1 adspace">
                         <!-- Overlay Post Start -->
                         {{-- @php print_r($ads);  @endphp --}}
@@ -131,19 +140,21 @@
                             <div class="post-wrap">
 
                                 <!-- Image -->
-                                <div class="image"><a href="#!"><img src="{{ asset("storage/advertisements/{$ad->image}") }}" alt="{{ $ad->name }}"></a>
+                                <div class="image-res">
+                                    <a href="{{ $ad->url }}" class="image" target="_blank">
+                                        <img src="{{ asset("storage/advertisements/{$ad->image}") }}" alt="{{ $ad->name }}">
+                                        <div class="bg-white border border-t-0 p-2 text-black">{{ $ad->name }}</div>
+                                    </a>
                                 </div>
-
-                                <!-- Category -->
                                 <a href="#!" class="category politic">Ad Space</a>
-
+                                <!-- Category -->                           
                             </div>
                         </div>
                         @endforeach
                         
                     </div> 
                 </div>
-                <div class="w-full lg:w-3-5/12 h-full mt-3">
+                <div class="w-full mt-3">
 
                     <!-- Political news -->
 
@@ -179,11 +190,11 @@
                         </div><!-- Sidebar Block Body End -->
 
                         <!-- Read More Button -->
-                        <a href="#" class="read-more">Read more...</a>
+                        <a href="http://www.test.telugutimes.net/politics" class="read-more">Read more...</a>
                     </div>
                     <!-- Political news ends-->
                 </div>
-                <div class="w-full lg:w-3-5/12 h-full mt-3">
+                <div class="w-full mt-3">
                     <div class="sidebar-block-wrapper">
 
                         <!-- Sidebar Block Head Start -->
@@ -202,7 +213,7 @@
                                 
                                 @foreach ($cini_news_details as $cini_news_data)
                                
-                                <li><a href="{{route('article',$cini_news_data->slug)}}">{{shortText($cini_news_data->title,10)}}</a></li>
+                                <li><a href="{{route('article',$cini_news_data->slug)}}">{{shortText($cini_news_data->title,9)}}</a></li>
                                 @endforeach
 
 
@@ -213,11 +224,11 @@
                         </div><!-- Sidebar Block Body End -->
 
                         <!-- Read More Button -->
-                        <a href="#" class="read-more">Read more...</a>
+                        <a href="http://www.test.telugutimes.net/cinemas" class="read-more">Read more...</a>
 
                     </div>
                 </div>
-                <div class="w-full lg:w-3-5/12 h-full mt-3">
+                <div class="w-full mt-3">
                     @if(!empty($ads['home-right-top']))
                     <div class="sidebar-block-wrapper">
 
@@ -250,7 +261,7 @@
                             @endif<!-- Post End -->
                         </div>
                     </div>
-                    <a href="{{ $ads['home-right-top'][1]['url'] }}" title="{{ $ads['home-right-top'][1]['name'] }}" class="show-modal horoscope"><img src="{{ asset("storage/advertisements/{$ads['home-right-top'][1]['image']}") }}" alt="{{ $ads['home-right-top'][1]['name'] }}"></a>
+                    <a href="{{ $ads['home-right-top'][1]['url'] }}" title="{{ $ads['home-right-top'][1]['name'] }}" class="show-modal horoscope" target="_blank"><img src="{{ asset("storage/advertisements/{$ads['home-right-top'][1]['image']}") }}" alt="{{ $ads['home-right-top'][1]['name'] }}"></a>
             
                 
                     @include('partials.home-slider-component',
@@ -273,7 +284,7 @@
                         <p>"medium rectangle 300x250"</p>
                     </div>
                 </div>
-                <div class="w-full lg:w-3-5/12 h-full mt-3">
+                <div class="w-full mt-3">
                     @include('partials.home-slider-component',
                         [   'hbg'=>  'life-style-head redbg',
                             'heading'=>'USA Upcoming Events',
@@ -287,7 +298,7 @@
                         ])
                     
                 </div>
-                   <div class="w-full lg:w-3-5/12 h-full mt-3">
+                   <div class="w-full mt-3">
                     @include('partials.home-gallery-slider-component',
                         [
                             'hbg'=>  'life-style-head redbg',
@@ -301,7 +312,7 @@
                             'url' => route("gallery.category",'america')
                         ])
                 </div>
-                <div class="w-full lg:w-3-5/12 h-full mt-3">
+                <div class="w-full mt-3">
                     @include('partials.home-slider-component',
                     [        'viwetype'=>'desktoponly',
                            
@@ -315,7 +326,7 @@
                             'url' => route("epapers")
                     ])
                 </div>
-                <div class="w-full lg:w-3-5/12 h-full mt-3">
+                <div class="w-full mt-3">
                     <div class="sidebar-block-wrapper">
 
                         <!-- Sidebar Block Head Start -->
@@ -348,11 +359,11 @@
                         </div><!-- Sidebar Block Body End -->
 
                         <!-- Read More Button -->
-                        <a href="#" class="read-more">Read more...</a>
+                        <a href="https://www.telugutimes.net/cinema-reviews" class="read-more">Read more...</a>
 
                     </div>
                 </div>
-                <div class="w-full lg:w-3-5/12 h-full mt-3">
+                <div class="w-full mt-3">
                     <div class="sidebar-block-wrapper">
 
                         <!-- Sidebar Block Head Start -->
@@ -385,11 +396,11 @@
                         </div><!-- Sidebar Block Body End -->
 
                         <!-- Read More Button -->
-                        <a href="#" class="read-more">Read more...</a>
+                        <a href="https://www.telugutimes.net/cinema-interviews" class="read-more">Read more...</a>
 
                     </div>
                 </div>
-                <div class="w-full lg:w-3-5/12 h-full mt-3">
+                <div class="w-full mt-3">
                     @include('partials.home-gallery-slider-component',
                         [
                             'heading'=>'Cinema Gallery',

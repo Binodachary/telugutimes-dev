@@ -11,7 +11,7 @@
                 </svg>
             </button>
         </div>
-        <div class="hidden lg:flex items-center lg:divide-x divide-solid divide-black">
+        <div class="container hidden lg:flex items-center">
             <x-reuse.menu-item href="/">
                 Home
             </x-reuse.menu-item>
@@ -26,16 +26,16 @@
                     @endif
                 </x-reuse.menu-item>
             @endforeach
-            <x-reuse.menu-item href="/epaper" class="highlight-menu-item">E-Paper</x-reuse.menu-item>
+            <x-reuse.menu-item href="/epaper" class="highlight-menu-item yellowbtn">E-Paper</x-reuse.menu-item>
             @if(request()->routeIs('homeEng'))
-                <x-reuse.menu-item href="/" class="highlight-menu-item">TT in తెలుగు.</x-reuse.menu-item>
+                <x-reuse.menu-item href="/" class="highlight-menu-item redbtn">TT in తెలుగు.</x-reuse.menu-item>
             @else
-                <x-reuse.menu-item href="{{ route('homeEng','eng') }}" class="highlight-menu-item" :active="request()->routeIs('homeEng')">TT in ENGLISH</x-reuse.menu-item>
+                <x-reuse.menu-item href="{{ route('homeEng','eng') }}" class="highlight-menu-item redbtn" :active="request()->routeIs('homeEng')">TT in ENGLISH</x-reuse.menu-item>
             @endif
         </div>
         <div class="lg:hidden flex justify-center items-center mx-auto">
             <a href="/">
-                <img src="path_to_your_logo_image" alt="Logo" class="h-8 md:h-10">
+                <img src="../images/logo-white.png" alt="Logo" class="h-8 md:h-10" style="margin-right:30px;">
             </a>
         </div>
 
@@ -62,7 +62,7 @@
         @endforeach
     </div> -->
 
-    <div :class="{'opacity-100': open, 'opacity-0': !open, 'pointer-events-auto': open, 'pointer-events-none': !open,relative: open }" v-cloak class="divide-black divide-solid divide-y inset-y-10 left-0 transform-gpu z-10 transition w-full duration-300 ease-linear block absolute lg:hidden" style="background-color: rgb(34, 72, 147);">
+    <div :class="{'opacity-100': open, 'opacity-0': !open, 'pointer-events-auto': open, 'pointer-events-none': !open,relative: open }" v-cloak class="divide-black divide-solid divide-y inset-y-3 left-0 transform-gpu z-10 transition w-full duration-300 ease-linear block absolute lg:hidden" style="background-color: rgb(34, 72, 147);">
         <x-reuse.menu-item href="/" style="padding-top: 8px!important;" :active="request()->routeIs('home')" class="w-full">
             Home
         </x-reuse.menu-item>
@@ -78,11 +78,11 @@
                 @endif
             </x-reuse.menu-item>
         @endforeach
-            <x-reuse.menu-item href="/epaper" class="highlight-menu-item w-full">Epaper</x-reuse.menu-item>
+            <x-reuse.menu-item href="/epaper" class="highlight-menu-item w-full yellowbtn">Epaper</x-reuse.menu-item>
             @if(request()->routeIs('homeEng'))
-                <x-reuse.menu-item href="/" class="highlight-menu-item2 w-full">TT in తెలుగు.</x-reuse.menu-item>
+                <x-reuse.menu-item href="/" class="highlight-menu-item2 w-full redbtn">TT in తెలుగు.</x-reuse.menu-item>
             @else
-                <x-reuse.menu-item href="{{ route('homeEng','eng') }}" class="highlight-menu-item2 w-full" :active="request()->routeIs('homeEng')">TT in ENGLISH</x-reuse.menu-item>
+                <x-reuse.menu-item href="{{ route('homeEng','eng') }}" class="highlight-menu-item2 w-full redbtn" :active="request()->routeIs('homeEng')">TT in ENGLISH</x-reuse.menu-item>
             @endif
             
     </div>

@@ -8,7 +8,8 @@
     <link rel="stylesheet" href="{{ asset('css/plugins.css') }}">
     <link rel="stylesheet" href="{{ asset('css/ycp.css') }}">
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
-    
+    <meta name="google-adsense-account" content="ca-pub-1037561410743863">
+
     {{-- <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css"/>
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css"/> --}}
     
@@ -21,18 +22,32 @@
     </style> 
 	
 	<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-MLXHE0E115"></script>
+{{-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-MLXHE0E115"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
   gtag('config', 'G-MLXHE0E115');
-</script> 
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9191323709031905"
+</script>  --}}
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-YPKCM69VL9"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-YPKCM69VL9');
+</script>
+{{-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1037561410743863"
+     crossorigin="anonymous"></script> --}}
+{{-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9191323709031905"
+     crossorigin="anonymous"></script> --}}
+     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1037561410743863"
      crossorigin="anonymous"></script>
 </head>
 <body class="font-sans antialiased">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1037561410743863"
+     crossorigin="anonymous"></script>
 <section class="lg:w-full mx-auto min-h-screen  flex-col justify-start overflow-hidden" id="app">
    
         @if(!empty($headerPartial))
@@ -56,7 +71,8 @@
         @endif
     </div>
     {{ $welcomeNote ?? "" }}
-    <main class="container items-start md:divide-x-2 md:gap-x-3 px-1 lg:px-0 mx-auto flex flex-wrap">
+    {{-- <main class="container items-start md:divide-x-2 md:gap-x-3 px-1 lg:px-0 mx-auto flex flex-wrap"> --}}
+    <main class="lg:grid grid-cols-3 container items-start  md:gap-x-3 px-1 lg:px-0 mx-auto flex flex-wrap">
         {{ $slot }}
     </main>
     <x-banner class="skyad2"/>

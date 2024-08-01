@@ -1,5 +1,5 @@
 
-<div class="sidebar-block-wrapper mt-10 {{$viwetype ?? ""}} ">
+<div class="sidebar-block-wrapper  {{$viwetype ?? ""}} ">
 
     <!-- Sidebar Block Head Start -->
     <div class="head {{ $hbg ?? "feature-head bluebg"}}">

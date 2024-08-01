@@ -243,11 +243,11 @@ height: 90px;
          
           <!-- Header Logo -->
           <div class="header-logo  hidden md:block md:w-5/12">
-              <a href="index.html" class="block"><img src="/images/logo.png" class="max-w-full h-23" alt="Telugu Times News"></a>
+              <a href="index.php" class="block"><img src="/images/logo.png" class="max-w-full h-20" alt="Telugu Times News"></a>
           </div>
           
           <!-- Header Banner -->
-          <div class="header-banner w-full md:w-7/12">
+          <div class="header-banner w-full md:w-9/12">
               <div class="banner"> 
                   @if(!empty($ads['logo-top-right-full']))
                   @foreach($ads['logo-top-right-full'] as $ad)

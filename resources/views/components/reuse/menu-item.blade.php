@@ -30,7 +30,7 @@
             </a>
             </span>
         <transition enter-active-class="transition ease-out duration-200" enter-class="transform opacity-0 scale-95" enter-to-class="transform opacity-100 scale-100" leave-active-class="transition ease-in duration-75" leave-class="transform opacity-100 scale-100" leave-to-class="transform opacity-0 scale-95">
-            <div class="relative md:absolute z-50 md:mt-1 {{ $dropdownClass ?? "" }} md:rounded-md shadow-lg {{ $alignmentClasses }}" style="display: none;" @mouseenter="menuOpen ='{{ $dropdownText }}'" @mouseleave="menuOpen = false" v-show="menuOpen == '{{ $dropdownText }}'">
+            <div class="relative md:absolute z-50 {{ $dropdownClass ?? "" }} md:rounded-md shadow-lg {{ $alignmentClasses }}" style="display: none;" @mouseenter="menuOpen ='{{ $dropdownText }}'" @mouseleave="menuOpen = false" v-show="menuOpen == '{{ $dropdownText }}'">
                 {!! $links ?? "" !!}
             </div>
         </transition>
