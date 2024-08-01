@@ -19,8 +19,8 @@ return [
             ['url' => 'national', 'text' => 'National'],
             ['url' => 'usapolitics', 'text' => 'USA Politics'],
             ['url' => 'international', 'text' => 'International'],
-			 ['url' => 'political-interview', 'text' => 'Political Interviews'],
-			 ['url' => 'political-articles', 'text' => 'Political Articles']
+            // ['url' => 'political-interview', 'text' => 'Political Interviews'],
+            ['url' => 'political-articles', 'text' => 'Political Articles']
         ],
     ],
 	 [

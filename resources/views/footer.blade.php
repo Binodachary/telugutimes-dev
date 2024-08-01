@@ -62,8 +62,8 @@
                     <li><a href="{{ route("categoryNews","navyandhra") }}">Navyandhra News</a></li>
                     <li><a href="{{ route("categoryNews","telangana") }}">Telangana News</a></li>
                     <li><a href="{{ route("categoryNews","international") }}">International Politics </a></li>
-                    <li><a href="{{ route("categoryNews","interviews") }}">Interviews </a></li>
-                    <li><a href="{{ route("categoryNews","articles") }}">Articles </a></li>
+                    <li><a href="{{ route("categoryNews","cinema-interviews") }}">Interviews </a></li>
+                    <li><a href="{{ route("categoryNews","political-articles") }}">Articles </a></li>
                 </ul>
             </div>
             <div class="w-full lg:w-1/4 md:w-6/12 mt-4 md:mt-0">

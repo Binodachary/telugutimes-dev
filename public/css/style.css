@@ -3289,12 +3289,12 @@ a.boxadspace img {
 
 .read-more {
   text-transform: capitalize;
-  font-weight: 600;
-  color: #666666;
+  font-weight: bolder;
+  /* color: #666666; */
+  color: #000000;
   font-size: 12px;
   float: right;
   padding: 5px;
-  float: right;
   text-align: right;
 }
 
